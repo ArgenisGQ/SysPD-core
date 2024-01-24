@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
 
+use Firebase\JWT\JWT;
+
 class AuthController extends Controller
 {
     public function index(){
@@ -92,5 +94,16 @@ class AuthController extends Controller
             /* 'token'   => $user, */
             'message' => 'You have successfully loggged out and the token was successfully delete'
         ];
+    }
+
+    public function JWT()
+    {
+        $payload = [
+            "iss" =>    "",
+            "sub" => $user->id,
+            "iat" => time(),
+            "exp" => time() + 60*60
+        ];
+        return JWT::encode($payload, env(!JWT_SECRET), 'HS256');
     }
 }
