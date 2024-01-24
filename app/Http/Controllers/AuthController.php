@@ -13,6 +13,17 @@ use Firebase\JWT\JWT;
 
 class AuthController extends Controller
 {
+    public function jwt(User $user)
+    {
+        $payload = [
+            "iss" => "plan",
+            "sub" => $user->id,
+            "iat" => time(),
+            "exp" => time()*60*60
+        ];
+        return JWT::encode($payload, env('JWT_SECRET'), 'HS256');
+    }
+
     public function index(){
         $users = User::all();
         /* $users = ([
@@ -56,6 +67,7 @@ class AuthController extends Controller
             'email'    => $request->email,
             'password' => Hash::make($request->password)
         ]);
+
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()
@@ -73,7 +85,8 @@ class AuthController extends Controller
 
         $user = User::where('email', $request['email'])->firstOrFail();
 
-        $token = $user->createToken('auth_token')->plainTextToken;
+        /* $token = $user->createToken('auth_token')->plainTextToken; */
+        $token = $this->jwt($user);
 
         return response()
           ->json([
@@ -94,16 +107,5 @@ class AuthController extends Controller
             /* 'token'   => $user, */
             'message' => 'You have successfully loggged out and the token was successfully delete'
         ];
-    }
-
-    public function JWT()
-    {
-        $payload = [
-            "iss" =>    "",
-            "sub" => $user->id,
-            "iat" => time(),
-            "exp" => time() + 60*60
-        ];
-        return JWT::encode($payload, env(!JWT_SECRET), 'HS256');
     }
 }
