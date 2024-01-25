@@ -2,28 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Handlers\Admin\AuthHandler;
 use App\Models\User;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-
-use Illuminate\Http\Request;
-
 use Firebase\JWT\JWT;
+use DateTimeImmutable;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\APIController;
+use Illuminate\Support\Facades\Validator;
 
-class AuthController extends Controller
+class AuthController extends APIController
 {
-    public function jwt(User $user)
-    {
-        $payload = [
-            "iss" => "plan",
-            "sub" => $user->id,
-            "iat" => time(),
-            "exp" => time()*60*60
-        ];
-        return JWT::encode($payload, env('JWT_SECRET'), 'HS256');
-    }
-
     public function index(){
         $users = User::all();
         /* $users = ([
@@ -49,64 +38,83 @@ class AuthController extends Controller
         return $users;
     }
 
+    // register
+    public function register(Request $request)
+    {
+        $input = $request->only('name', 'email', 'password', 'c_password');
 
-    public function register(Request $request){
-        $validator = Validator::make($request->all(),[
-            'username' => 'required|string|max:255|unique:users',
-            'name'     => 'required|string|max:255',
-            'email'    => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8'
-        ]);
-        if ($validator->fails()) {
-            /* return response()->json($validator->errors()); */
-            return response()->json(['message' => $validator->errors()]);
-        };
-        $user = User::create([
-            'username' => $request->username,
-            'name'     => $request->name,
-            'email'    => $request->email,
-            'password' => Hash::make($request->password)
+        $validator = Validator::make($input, [
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8',
+            'c_password' => 'required|same:password',
         ]);
 
-        /* $token = $user->createToken('auth_token')->plainTextToken; */
-        $token = $this->jwt($user);
-
-        return response()
-            ->json([
-                'data'         => $user,
-                'access_token' => $token,
-                'token_type'   => 'Bearer',
-            ]);
-    }
-
-    public function login(Request $request){
-        if (!Auth::attempt($request->only('email','password'))) {
-            return response()->json(['message' => 'Unauthorized', 'status' => 'fail' ],401);
+        if($validator->fails()){
+            return $this->sendError('Validation Error', $validator->errors(), 422);
         }
 
-        $user = User::where('email', $request['email'])->firstOrFail();
+        $input['password'] = bcrypt($input['password']);
+        $user = User::create($input);
 
-        /* $token = $user->createToken('auth_token')->plainTextToken; */
-        $token = $this->jwt($user);
+        if ($user) {
+            $authHandler = new AuthHandler;
+            $token = $authHandler->GenerateToken($user);
 
-        return response()
-          ->json([
-                'message'     => 'Hi '.$user->name,
-                'accessToken' => $token,
-                'token_Typen' => 'Bearer',
-                'user'        => $user,
-                'status'      => 'success',
-          ]);
+            $success = [
+                'user' => $user,
+                'token' => $token,
+            ];
+
+            return $this->sendResponse($success, 'user registered successfully', 201);
+        }
+
     }
 
-    /* public function logout(User $user) */
-    public function logout()
+    public function login(Request $request)
     {
-        auth()->user()->tokens()->delete();
-        /* $user->tokens()->delete(); */
-        return[
-            /* 'token'   => $user, */
-            'message' => 'You have successfully loggged out and the token was successfully delete'
-        ];
+        $input = $request->only('email', 'password');
+
+        $validator = Validator::make($input, [
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return $this->sendError('Validation Error', $validator->errors(), 422);
+        }
+
+        $remember = $request->remember;
+
+        if(Auth::attempt($input, $remember)){
+            $user = Auth::user();
+
+            $authHandler = new AuthHandler;
+            $token = $authHandler->GenerateToken($user);
+
+            $success = ['user' => $user, 'token' => $token];
+
+            /* return $this->sendResponse($success, 'Logged In'); */
+
+            return response()
+                    ->json([
+                            'message'     => 'Hi '.$user->name,
+                            'accessToken' => $token,
+                            'token_Typen' => 'Bearer',
+                            'user'        => $user,
+                            'status'      => 'success',
+          ]);
+
+        }
+        else{
+            return $this->sendError('Unauthorized', ['error' => "Invalid Login credentials"], 401);
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return $this->sendResponse([], 'Logged Out');
     }
 }
