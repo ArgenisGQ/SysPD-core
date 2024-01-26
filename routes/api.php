@@ -27,7 +27,7 @@ use Illuminate\Routing\Router;
 
 /* Route::post('register', [AuthController::class, 'register']); */
 
-Route::post('login', [AuthController::class, 'login']);
+/* Route::post('login', [AuthController::class, 'login']); */ /* ----- */
 
 /* Route::get('logout', [AuthController::class, 'logout']); */
 
@@ -60,6 +60,7 @@ Route::middleware('jwt.auth')->get('/user', function (Request $request) {
 
 /*
 Route::get('/home', [HomeController::class, 'home']); */
+
 
 /* Route::post('/register', [AuthController::class, 'register']); */
 Route::post('/login', [AuthController::class, 'login'])->name('login');

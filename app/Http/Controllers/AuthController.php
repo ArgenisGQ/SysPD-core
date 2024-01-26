@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\APIController;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Facades\Hash;
+
 class AuthController extends APIController
 {
     public function index(){
@@ -41,21 +43,32 @@ class AuthController extends APIController
     // register
     public function register(Request $request)
     {
-        $input = $request->only('name', 'email', 'password', 'c_password');
+       /*  $input = $request->only('name', 'email', 'password', 'c_password'); */
 
-        $validator = Validator::make($input, [
-            'name' => 'required',
+        $validator = Validator::make(/* $input */ $request->all(), [
+            'username' => 'required|string|max:255|unique:users',
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8'
+            /* 'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
-            'c_password' => 'required|same:password',
+            'c_password' => 'required|same:password', */
         ]);
 
         if($validator->fails()){
-            return $this->sendError('Validation Error', $validator->errors(), 422);
+            return $this->sendError('message', $validator->errors(), 422);
         }
 
-        $input['password'] = bcrypt($input['password']);
-        $user = User::create($input);
+        /* $input['password'] = bcrypt($input['password']); */
+        /* $user = User::create($input); */
+
+        $user = User::create([
+            'username' => $request->username,
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
 
         if ($user) {
             $authHandler = new AuthHandler;
