@@ -128,6 +128,13 @@ class AuthController extends APIController
     {
         $request->user()->currentAccessToken()->delete();
 
-        return $this->sendResponse([], 'Logged Out');
+       /*  return $this->sendResponse([], 'Logged Out'); */
+
+        return[
+            /* 'token'   => $user, */
+            'message' => 'You have successfully loggged out and the token was successfully delete'
+        ];
+
+
     }
 }
