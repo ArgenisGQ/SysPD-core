@@ -120,7 +120,14 @@ class AuthController extends APIController
 
         }
         else{
-            return $this->sendError('Unauthorized', ['error' => "Invalid Login credentials"], 401);
+            return $this->sendError('Unauthorized',
+                                   ['error' => "Invalid Login credentials"],
+                                   401);
+            /* return response()
+                    ->json([
+                            'message'     => 'Unauthorized',
+                            'status'      => '401',
+                        ]); */
         }
     }
 
