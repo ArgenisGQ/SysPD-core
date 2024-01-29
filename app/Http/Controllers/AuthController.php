@@ -126,7 +126,9 @@ class AuthController extends APIController
 
     public function logout(Request $request)
     {
-        $request->user()->currentAccessToken()->delete();
+
+        /* $request->user()->currentAccessToken()->delete(); */
+        auth()->user()->tokens()->delete();
 
        /*  return $this->sendResponse([], 'Logged Out'); */
 
