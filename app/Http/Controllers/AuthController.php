@@ -113,7 +113,7 @@ class AuthController extends APIController
                     ->json([
                             'message'     => 'Hi '.$user->name,
                             'accessToken' => $token,
-                            'token_Typen' => 'Bearer',
+                            'token_Type' => 'Bearer',
                             'user'        => $user,
                             'status'      => 'success',
           ]);
