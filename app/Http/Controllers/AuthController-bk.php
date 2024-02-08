@@ -59,6 +59,7 @@ class AuthController extends Controller
         ]);
         if ($validator->fails()) {
             /* return response()->json($validator->errors()); */
+            /* return response()->json(['message' => $request->all()]); */
             return response()->json(['message' => $validator->errors()]);
         };
         $user = User::create([
@@ -73,6 +74,7 @@ class AuthController extends Controller
 
         return response()
             ->json([
+                'message'      => 'Registrado..',
                 'data'         => $user,
                 'access_token' => $token,
                 'token_type'   => 'Bearer',
