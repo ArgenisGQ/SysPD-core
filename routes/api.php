@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\HomeController;
 use App\Helpers\AdminHelper;
 use Illuminate\Routing\Router;
@@ -46,9 +47,11 @@ use Illuminate\Routing\Router;
 
 //rutas protegidas por el auth de JWT
 Route::middleware(['jwt.auth'])->group(function(){
-    Route::get('index', [AuthController::class, 'index']);
+    /* Route::get('index', [AuthController::class, 'index']); */
     Route::post('register', [AuthController::class, 'register']);
     Route::get('logout', [AuthController::class, 'logout']);
+    Route::get('index', [UsersController::class, 'index']);
+    Route::post('store', [UsersController::class, 'store']);
 });
 
 
