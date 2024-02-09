@@ -88,6 +88,9 @@ class UsersController extends Controller
     //Mostrar datos del usuario especifico
     public function show($id)
     {
+        $user = User::findOrfail($id);
+
+        return $user;
 
     }
 
