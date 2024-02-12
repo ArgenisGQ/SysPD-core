@@ -50,6 +50,7 @@ Route::middleware(['jwt.auth'])->group(function(){
     /* Route::get('index', [AuthController::class, 'index']); */
     Route::post('register', [AuthController::class, 'register']);
     Route::get('logout', [AuthController::class, 'logout']);
+
     /* Route::get('index', [UsersController::class, 'index']);
     Route::post('store', [UsersController::class, 'store']);
     Route::post('show', [UsersController::class, 'show']);
