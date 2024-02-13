@@ -88,9 +88,19 @@ class UsersController extends Controller
     //Mostrar datos del usuario especifico
     public function show($id)
     {
-        $user = User::findOrfail($id);
 
-        return $user;
+            //Buscar el usuario
+            $user = User::findOrfail($id);
+            if (!$user){
+                return $user()->json([
+                    'message'=>'User Not Found'
+                ],404);
+            }
+
+            //retornar el JSON
+            return response()->json([
+                'users' => $user
+            ],200);
 
     }
 
