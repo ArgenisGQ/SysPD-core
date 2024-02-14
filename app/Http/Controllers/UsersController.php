@@ -35,10 +35,10 @@ class UsersController extends Controller
                 'email'            => $users->email,
             ]); */
 
-        /* return response()
-            ->json($users); */
+        return response()
+            ->json($users);
 
-        return $users;
+        /* return $users; */
     }
 
     //Registrar usuarios
@@ -105,14 +105,35 @@ class UsersController extends Controller
     }
 
     //Editar/actualizar datos de usuario
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
+        //falta validacion
 
+        $data = User::find($id);
+        $data->fill($request->all());
+        $data->save();
+
+        return response()->json($data, 200);
     }
 
     //borrar usuario
     public function destroy($id)
     {
+        //Detalles
+        /* $users = User::find($id);
+        if(!$users){
+            return response()->json([
+                'message'=>'User not found!!'
+            ],404);
+        } */
+
+        //Borrar Usuario
+        /* $users->delete(); */
+
+        //Retornnando JSON
+        /* return response()->json([
+            'message' => 'User successfully deleted.'
+        ],200) */
 
     }
 

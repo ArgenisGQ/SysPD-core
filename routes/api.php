@@ -43,7 +43,8 @@ use Illuminate\Routing\Router;
 
 /* -------------------------------------------------------------------- */
 
-
+/* Route::resource('users', UsersController::class)
+           ->only(['index','show','store','update','destroy']); */
 
 //rutas protegidas por el auth de JWT
 Route::middleware(['jwt.auth'])->group(function(){
@@ -56,6 +57,7 @@ Route::middleware(['jwt.auth'])->group(function(){
     Route::post('show', [UsersController::class, 'show']);
     Route::post('update', [UsersController::class, 'update']);
     Route::post('destroy', [UsersController::class, 'destroy']); */
+
     Route::resource('users', UsersController::class)
            ->only(['index','show','store','update','destroy']);
 });
