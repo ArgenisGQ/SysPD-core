@@ -49,8 +49,9 @@ use Illuminate\Routing\Router;
 //rutas protegidas por el auth de JWT
 Route::middleware(['jwt.auth'])->group(function(){
     /* Route::get('index', [AuthController::class, 'index']); */
-    Route::post('register', [AuthController::class, 'register']);
-    Route::post('logout', [AuthController::class, 'logout']);
+
+    /* Route::post('register', [AuthController::class, 'register']);
+    Route::post('logout', [AuthController::class, 'logout']); */
 
     /* Route::get('index', [UsersController::class, 'index']);
     Route::post('store', [UsersController::class, 'store']);
@@ -58,8 +59,8 @@ Route::middleware(['jwt.auth'])->group(function(){
     Route::post('update', [UsersController::class, 'update']);
     Route::post('destroy', [UsersController::class, 'destroy']); */
 
-    Route::resource('users', UsersController::class)
-           ->only(['index','show','store','update','destroy']);
+    /* Route::resource('users', UsersController::class)
+           ->only(['index','show','store','update','destroy']); */
 });
 
 /* Route::middleware(['auth:sanctum'])->group(function() {
@@ -68,11 +69,11 @@ Route::middleware(['jwt.auth'])->group(function(){
 }); */
 
 
-Route::middleware('jwt.auth')->get('/user', function (Request $request) {
+/* Route::middleware('jwt.auth')->get('/user', function (Request $request) {
     $adminHelper = new AdminHelper();
     $user = $adminHelper->GetAuthUser();
     return response()->json(['data' => $user], 200);
-});
+}); */
 
 /*
 Route::get('/home', [HomeController::class, 'home']); */
@@ -80,3 +81,16 @@ Route::get('/home', [HomeController::class, 'home']); */
 
 /* Route::post('/register', [AuthController::class, 'register']); */
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+
+Route::controller(AuthController::class)->group(function () {
+    Route::post('login', 'login');
+    Route::post('register', 'register');
+    Route::post('logout', 'logout');
+    Route::post('refresh', 'refresh');
+    Route::get('me', 'me');
+
+    Route::resource('users', UsersController::class)
+           ->only(['index','show','store','update','destroy']);
+
+});
