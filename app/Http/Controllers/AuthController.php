@@ -105,7 +105,10 @@ class AuthController extends APIController
             $authHandler = new AuthHandler;
             $token = $authHandler->GenerateToken($user);
 
-            $success = ['user' => $user, 'token' => $token];
+
+            /* $token = auth()->factory()->getTTL()*60; */
+
+            /* $success = ['user' => $user, 'token' => $token]; */
 
             /* return $this->sendResponse($success, 'Logged In'); */
 
@@ -149,11 +152,25 @@ class AuthController extends APIController
        /* $user->tokens()->delete(); */
 
       // delete the current token that was used for the request
-       $request->user()->currentAccessToken()->delete();
+       /* $request->user()->currentAccessToken()->delete(); */
+
+
+
+       /* $user = Auth::user(); */
+
+       /* $user = auth()->user(); */
+
+       /* $request->user()->currentAccessToken()->delete(); */
+
+       /* Auth::guard('api')->logout(); */
+
+       $user = Auth::a;
+
+        Auth::guard()->logout();
 
         return[
             /* 'token'   => $user, */
-            /* 'full' => $user, */
+            'full' => $user,
             'message' => 'You have successfully loggged out and the token was successfully delete'
         ];
 

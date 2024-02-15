@@ -17,7 +17,7 @@ class AuthHandler
         $secretKey  = env('JWT_KEY');
         $tokenId    = base64_encode(random_bytes(16));
         $issuedAt   = new DateTimeImmutable();
-        $expire     = $issuedAt->modify('+6 minutes')->getTimestamp();      // Add 60 seconds
+        $expire     = $issuedAt->modify('+60 minutes')->getTimestamp();      // Add 60 seconds
         $serverName = "your.pbn.name";
         $userID   = $user->id;                                           // Retrieved from filtered POST data
 
