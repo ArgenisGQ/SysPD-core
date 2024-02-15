@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\APIController;
 use Illuminate\Support\Facades\Validator;
+use App\Helpers\AdminHelper;
+use App\Helpers\PublicHelper;
+
 
 use Illuminate\Support\Facades\Hash;
 
@@ -164,13 +167,26 @@ class AuthController extends APIController
 
        /* Auth::guard('api')->logout(); */
 
-       $user = Auth::a;
+       /* $user = Auth::user(); */
 
-        Auth::guard()->logout();
+        /* Auth::guard()->logout(); */
+
+        /* $request->user()->currentAccessToken()->delete(); */
+
+        $adminHelper = new AdminHelper();
+        $user = $adminHelper->GetAuthUser();
+
+        $publicHelper = new PublicHelper();
+        $token = $publicHelper->GetAndDecodeJWT();
+
+
+        /* $user->user()->cucurrentAccessToken()->delete(); */
 
         return[
             /* 'token'   => $user, */
-            'full' => $user,
+            /* 'full' => $user, */
+            'user' => $user,
+            'token'=> $token,
             'message' => 'You have successfully loggged out and the token was successfully delete'
         ];
 

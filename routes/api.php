@@ -62,6 +62,11 @@ Route::middleware(['jwt.auth'])->group(function(){
            ->only(['index','show','store','update','destroy']);
 });
 
+/* Route::middleware(['auth:sanctum'])->group(function() {
+
+    Route::post('/logout', [AuthController::class, 'logout']);
+}); */
+
 
 Route::middleware('jwt.auth')->get('/user', function (Request $request) {
     $adminHelper = new AdminHelper();
