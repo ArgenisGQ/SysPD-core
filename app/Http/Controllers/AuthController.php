@@ -260,6 +260,7 @@ class AuthController extends APIController
         return response()->json([
             'status' => 'success',
             'message' => 'Successfully logged out',
+            'user' => Auth::user(),
         ]);
     }
 
