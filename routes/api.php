@@ -48,7 +48,7 @@ use Illuminate\Routing\Router;
 
 
 //rutas protegidas por el auth de JWT
-Route::middleware(['api'])->group(function(){
+/* Route::middleware(['api'])->group(function(){ */
     /* Route::get('index', [AuthController::class, 'index']); */
 
     /* Route::post('register', [AuthController::class, 'register']);
@@ -62,7 +62,7 @@ Route::middleware(['api'])->group(function(){
 
     /* Route::resource('users', UsersController::class)
            ->only(['index','show','store','update','destroy']); */
-});
+/* }); */
 
 
 /* Route::middleware(['auth:sanctum'])->group(function() {
@@ -77,43 +77,48 @@ Route::middleware(['api'])->group(function(){
     return response()->json(['data' => $user], 200);
 }); */
 
-/*
-Route::get('/home', [HomeController::class, 'home']); */
+
+Route::get('/home', [HomeController::class, 'home']);
 
 
 /* Route::post('/register', [AuthController::class, 'register']); */
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 
-Route::controller(AuthController::class)->group(function () {
+/* Route::controller(AuthController::class)->group(function () { */
     /* Route::post('login', 'login'); */
     /* Route::post('register', 'register'); */
 
     /* Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
     Route::get('me', 'me'); */
+/* }); */
 
-    /* Route::resource('users', UsersController::class)
-           ->only(['index','show','store','update','destroy']); */
-
-});
-
-Route::group([
+/* Route::group([
     "middleware" => ["auth:api"]
-], function(){
+], function(){ */
 
-    /* Route::post('logout', 'logout');
-    Route::post('refresh', 'refresh');
-    Route::get('me', 'me'); */
-
-    Route::post('logout', [AuthController::class, 'logout']);
-    Route::post('refresh', [AuthController::class, 'refresh']);
-    Route::get('me', [AuthController::class, 'me']);
+    /* Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('refreshtoken', [AuthController::class, 'refreshToken']);
+    Route::get('useractive', [AuthController::class, 'userActive']);
 
     Route::resource('users', UsersController::class)
-           ->only(['index','show','store','update','destroy']);
+           ->only(['index','show','store','update','destroy']); */
 
     /* Route::get("profile", [ApiController::class, "profile"]);
     Route::get("refresh", [ApiController::class, "refreshToken"]);
     Route::get("logout", [ApiController::class, "logout"]); */
+/* }); */
+
+Route::middleware(["auth:api"])->group(function(){
+
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('refreshtoken', [AuthController::class, 'refreshToken']);
+    Route::get('useractive', [AuthController::class, 'userActive']);
+    Route::get('respondwithtoken', [AuthController::class, 'respondWithToken']);
+
+
+    Route::resource('users', UsersController::class)
+           ->only(['index','show','store','update','destroy']);
+
 });
