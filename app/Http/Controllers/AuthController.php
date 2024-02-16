@@ -236,12 +236,18 @@ class AuthController extends APIController
 
         $user = Auth::user();
         return response()->json([
-                'status' => 'success',
+                'message'     => 'Hi '.$user->name,
+                'accessToken' => $token,
+                'token_Type' => 'Bearer',
+                'user'        => $user,
+                'status'      => 'success',
+
+                /* 'status' => 'success',
                 'user' => $user,
                 'authorisation' => [
                     'token' => $token,
                     'type' => 'bearer',
-                ],
+                ], */
                 'expires_in' => auth()->factory()->getTTL() * 60
             ]);
 
