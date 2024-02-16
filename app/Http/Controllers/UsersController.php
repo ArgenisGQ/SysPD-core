@@ -120,21 +120,24 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //Detalles
-        /* $users = User::find($id);
+        $users = User::find($id);
         if(!$users){
             return response()->json([
                 'message'=>'User not found!!'
             ],404);
-        } */
+        };
 
         //Borrar Usuario
-        /* $users->delete(); */
+        $users->delete();
 
         //Retornnando JSON
-        /* return response()->json([
+        return response()->json([
             'message' => 'User successfully deleted.'
-        ],200) */
+        ],200);
 
+        /* return response()->json([
+            'user active'=>$users,
+        ],200); */
     }
 
     // register
