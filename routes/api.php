@@ -88,11 +88,32 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::controller(AuthController::class)->group(function () {
     /* Route::post('login', 'login'); */
     /* Route::post('register', 'register'); */
-    Route::post('logout', 'logout');
+
+    /* Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
-    Route::get('me', 'me');
+    Route::get('me', 'me'); */
+
+    /* Route::resource('users', UsersController::class)
+           ->only(['index','show','store','update','destroy']); */
+
+});
+
+Route::group([
+    "middleware" => ["auth:api"]
+], function(){
+
+    /* Route::post('logout', 'logout');
+    Route::post('refresh', 'refresh');
+    Route::get('me', 'me'); */
+
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('refresh', [AuthController::class, 'refresh']);
+    Route::get('me', [AuthController::class, 'me']);
 
     Route::resource('users', UsersController::class)
            ->only(['index','show','store','update','destroy']);
 
+    /* Route::get("profile", [ApiController::class, "profile"]);
+    Route::get("refresh", [ApiController::class, "refreshToken"]);
+    Route::get("logout", [ApiController::class, "logout"]); */
 });
