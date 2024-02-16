@@ -60,8 +60,8 @@ Route::middleware(['api'])->group(function(){
     Route::post('update', [UsersController::class, 'update']);
     Route::post('destroy', [UsersController::class, 'destroy']); */
 
-    Route::resource('users', UsersController::class)
-           ->only(['index','show','store','update','destroy']);
+    /* Route::resource('users', UsersController::class)
+           ->only(['index','show','store','update','destroy']); */
 });
 
 
@@ -92,7 +92,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
     Route::get('me', 'me');
 
-    /* Route::resource('users', UsersController::class)
-           ->only(['index','show','store','update','destroy']); */
+    Route::resource('users', UsersController::class)
+           ->only(['index','show','store','update','destroy']);
 
 });
