@@ -108,12 +108,48 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         //falta validacion
+        $validator = Validator::make(/* $input */ $request->all(), [
+            /* 'username' => 'required|string|max:255|unique:users',
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8' */
+
+            /* 'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8',
+            'c_password' => 'required|same:password', */
+        ]);
+        if($validator->fails()){
+            return $this->sendError('message', $validator->errors(), 422);
+        }
+
+        //PARA ACTUALIZAR FOTO //ejemplo de proyecto en laravel
+        /* if ($request->hasFile('image')) {
+            if ($user->image != null) {
+                Storage::disk('images')->delete($user->image->path);
+                $user->image->delete();
+            }
+            $user->image()->create([
+                'path' => $request->image->store('users', 'images'),
+            ]);
+        } */
+
+        //PARA ACTUALIZAR PASSWORD -
+        $input = $request->all();
+        if(!empty($input['password'])){
+            $input['password'] = Hash::make($input['password']);
+            $user = User::find($id);
+            $user->password = $input['password'];
+            $user->save();
+        }/* else{
+            $input = Arr::except($input, ['password']);
+        } */
 
         $data = User::find($id);
-        $data->fill($request->all());
+        $data->fill($request->except('password'));
         $data->save();
 
-        return response()->json($data, 200);
+        return response()->json($input, 200);
     }
 
     //borrar usuario
