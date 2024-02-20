@@ -58,7 +58,7 @@ class UsersController extends Controller
         ]);
 
         if($validator->fails()){
-            return $this->sendError('message', $validator->errors(), 422);
+            return response()->json(['message', $validator->errors()], 422);
         }
 
         /* $input['password'] = bcrypt($input['password']); */
@@ -80,7 +80,7 @@ class UsersController extends Controller
                 'token' => $token,
             ];
 
-            return $this->sendResponse($success, 'user registered successfully', 201);
+            return response()->json([$success, 'user registered successfully'], 201);
         }
 
     }
@@ -107,12 +107,12 @@ class UsersController extends Controller
     //Editar/actualizar datos de usuario
     public function update(Request $request, $id)
     {
-        //falta validacion
+        //falta validacion //REVISAR LA DUPLICIDAD PARA  USERNAME Y EL EMAIL
         $validator = Validator::make(/* $input */ $request->all(), [
-            /* 'username' => 'required|string|max:255|unique:users',
+            /* 'username' => 'required|string|max:255|unique:users', */
             'name'     => 'required|string|max:255',
-            'email'    => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8' */
+            /* 'email'    => 'required|string|email|max:255|unique:users', */
+            'password' => 'required|string|min:8'
 
             /* 'name' => 'required',
             'email' => 'required|email|unique:users',
@@ -120,7 +120,7 @@ class UsersController extends Controller
             'c_password' => 'required|same:password', */
         ]);
         if($validator->fails()){
-            return $this->sendError('message', $validator->errors(), 422);
+            return response()->json(['message', $validator->errors()], 422);
         }
 
         //PARA ACTUALIZAR FOTO //ejemplo de proyecto en laravel
@@ -193,7 +193,7 @@ class UsersController extends Controller
         ]);
 
         if($validator->fails()){
-            return $this->sendError('message', $validator->errors(), 422);
+            return response()->json(['message', $validator->errors()], 422);
         }
 
         /* $input['password'] = bcrypt($input['password']); */
@@ -215,7 +215,7 @@ class UsersController extends Controller
                 'token' => $token,
             ];
 
-            return $this->sendResponse($success, 'user registered successfully', 201);
+            return response()->json([$success, 'user registered successfully'], 201);
         }
 
     }
