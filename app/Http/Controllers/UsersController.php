@@ -46,8 +46,12 @@ class UsersController extends Controller
     {
          /*  $input = $request->only('name', 'email', 'password', 'c_password'); */
 
+        /*  return response()->json($request->all(), 200); */
+
          $validator = Validator::make(/* $input */ $request->all(), [
             'username' => 'required|string|max:255|unique:users',
+            'idcard'   => 'required|unique:users',
+            'actived'  => 'required',
             'name'     => 'required|string|max:255',
             'email'    => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8'
@@ -66,6 +70,8 @@ class UsersController extends Controller
 
         $user = User::create([
             'username' => $request->username,
+            'idcard'   => $request->idcard,
+            'actived'  => $request->actived,
             'name'     => $request->name,
             'email'    => $request->email,
             'password' => Hash::make($request->password)
