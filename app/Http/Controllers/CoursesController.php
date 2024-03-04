@@ -23,7 +23,7 @@ class CoursesController extends Controller
         $validator = Validator::make(/* $input */ $request->all(), [
             'name'      => 'required|string|max:255|unique:courses',
             'code'      => 'required|string|max:255|unique:courses',
-            'section'   => 'required|string|email|max:255|unique:courses',
+            'section'   => 'required|string|max:255',
             /* 'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
@@ -38,9 +38,9 @@ class CoursesController extends Controller
         /* $user = User::create($input); */
 
         $course = Courses::create([
-            'name'       => $request->username,
-            'code'       => $request->name,
-            'section'    => $request->email,
+            'name'       => $request->name,
+            'code'       => $request->code,
+            'section'    => $request->section,
         ]);
 
         if ($course) {
@@ -52,7 +52,7 @@ class CoursesController extends Controller
                 /* 'token' => $token, */
             ];
 
-            return response()->json([$success, 'course registered successfully'], 201);
+            return response()->json([$success, 'Course registered successfully'], 201);
         }
     }
 
@@ -62,7 +62,7 @@ class CoursesController extends Controller
         $course = Courses::findOrfail($id);
         if (!$course){
             return $course()->json([
-                'message'=>'User Not Found'
+                'message'=>'Course Not Found'
             ],404);
         }
 
@@ -122,7 +122,7 @@ class CoursesController extends Controller
         $data->fill($request->all());
         $data->save();
 
-        return response()->json($input, 200);
+        return response()->json($data, 200);
     }
 
     public function destroy($id)
