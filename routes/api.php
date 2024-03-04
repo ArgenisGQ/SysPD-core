@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\HomeController;
 use App\Helpers\AdminHelper;
+use App\Models\Courses;
 use Illuminate\Routing\Router;
 
 /*
@@ -121,4 +123,6 @@ Route::middleware(["auth:api"])->group(function(){
     Route::resource('users', UsersController::class)
            ->only(['index','show','store','update','destroy']);
 
+    Route::resource('courses', CoursesController::class)
+           ->only(['index','show','store','update','destroy']);
 });
