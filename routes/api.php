@@ -126,3 +126,4 @@ Route::middleware(["auth:api"])->group(function(){
     Route::resource('courses', CoursesController::class)
            ->only(['index','show','store','update','destroy']);
 });
+/* Route::resource(images, [ImageController::class]); */

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Planning extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'curricularunit',
+        'code',
+        'section'
+    ];
 }
