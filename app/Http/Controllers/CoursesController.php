@@ -68,7 +68,7 @@ class CoursesController extends Controller
 
         //retornar el JSON
         return response()->json([
-            'users' => $course
+            'course' => $course
         ],200);
     }
 
