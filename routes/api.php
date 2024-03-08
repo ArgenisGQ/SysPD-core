@@ -8,6 +8,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\HomeController;
 use App\Helpers\AdminHelper;
+use App\Http\Controllers\PlanningController;
 use App\Models\Courses;
 use Illuminate\Routing\Router;
 
@@ -119,11 +120,14 @@ Route::middleware(["auth:api"])->group(function(){
     Route::get('useractive', [AuthController::class, 'userActive']);
     Route::get('respondwithtoken', [AuthController::class, 'respondWithToken']);
 
-
+    //USUARIOS
     Route::resource('users', UsersController::class)
            ->only(['index','show','store','update','destroy']);
-
+    //CURSOS
     Route::resource('courses', CoursesController::class)
+           ->only(['index','show','store','update','destroy']);
+    //PLANIFICACION
+    Route::resource('plannings', PlanningController::class)
            ->only(['index','show','store','update','destroy']);
 });
 /* Route::resource(images, [ImageController::class]); */

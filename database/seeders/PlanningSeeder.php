@@ -15,22 +15,22 @@ class PlanningSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('courses')->insert([
+        DB::table('plannings')->insert([
             'curricularunit'      => "UNIDAD Curso01",
             'code'                => "AAAA-0001",
             'section'             => "AA01A0A"
         ]);
-        DB::table('courses')->insert([
+        DB::table('plannings')->insert([
             'curricularunit'      => "UNIDAD Curso01",
             'code'                => "AAAA-0001",
             'section'             => "AA02A0A"
         ]);
-        DB::table('courses')->insert([
+        DB::table('plannings')->insert([
             'curricularunit'      => "UNIDAD Curso02",
             'code'                => "AAAA-0001",
             'section'             => "AA01A0A"
         ]);
-        DB::table('courses')->insert([
+        DB::table('plannings')->insert([
             'curricularunit'      => "UNIDAD Curso02",
             'code'                => "AAAA-0001",
             'section'             => "AA02A0A"

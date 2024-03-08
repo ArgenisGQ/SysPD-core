@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('plannings', function (Blueprint $table) {
             $table->id();
-            $table->string('curricularunit')->unique();
-            $table->string('code')->unique();
+            $table->string('curricularunit');
+            $table->string('code');
             $table->string('section')->nullable();
             $table->timestamps();
         });

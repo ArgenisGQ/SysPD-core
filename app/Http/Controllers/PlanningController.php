@@ -14,6 +14,8 @@ class PlanningController extends Controller
     {
         $plannings = Planning::all();
 
+       /*  dd($plannings); */
+
         return response()
             ->json($plannings);
     }
