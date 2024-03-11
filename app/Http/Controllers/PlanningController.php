@@ -21,19 +21,13 @@ class PlanningController extends Controller
     }
 
 
-    public function create()
-    {
-
-    }
-
-
     public function store(Request $request)
     {
         /*  $input = $request->only('name', 'email', 'password', 'c_password'); */
 
         $validator = Validator::make(/* $input */ $request->all(), [
-            'curricularunit'      => 'required|string|max:255|unique:courses',
-            'code'                => 'required|string|max:255|unique:courses',
+            'curricularunit'      => 'required|string|max:255|unique:plannings',
+            'code'                => 'required|string|max:255|unique:plannings',
             'section'             => 'required|string|max:255',
             /* 'name' => 'required',
             'email' => 'required|email|unique:users',
@@ -49,7 +43,7 @@ class PlanningController extends Controller
         /* $user = User::create($input); */
 
         $planning = Planning::create([
-            'curricularunit'       => $request->name,
+            'curricularunit'       => $request->curricularunit,
             'code'                 => $request->code,
             'section'              => $request->section,
         ]);
@@ -82,12 +76,6 @@ class PlanningController extends Controller
         return response()->json([
             'planning' => $planning
         ],200);
-    }
-
-
-    public function edit($id)
-    {
-        //
     }
 
 
