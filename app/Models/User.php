@@ -61,4 +61,10 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    //Relacion de uno a muchos inversa
+
+    public function courses(){
+        return $this->belongsTo(Courses::class);
+    }
 }

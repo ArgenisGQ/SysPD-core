@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CourseSeeder::class,
             PlanningSeeder::class,
+            User_coursesSeeder::class,
         ]);
     }
 }
