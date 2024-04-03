@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Courses;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -68,7 +69,7 @@ class CoursesController extends Controller
 
         //retornar el JSON
         return response()->json([
-            'course' => $course
+            'course' => $course->user
         ],200);
     }
 

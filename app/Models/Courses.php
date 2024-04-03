@@ -30,6 +30,7 @@ class Courses extends Model
         'unit15',
         'unit16',
         'unitTotal',
+        'user_id',
         'id_dpto',
         'id_faculty',
         //'slug',
