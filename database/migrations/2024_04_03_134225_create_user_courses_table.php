@@ -42,6 +42,7 @@ return new class extends Migration
             //Seccion a usas cuando el sistema de periodos activos
             /* $table->unsignedBigInteger('period_id')->nullable();
             $table->foreign('period_id')->references('id')->on('periods'); */
+            $table->engine = 'InnoDB';
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('curricularunit');
             $table->string('code');
             $table->string('section')->nullable();
+            $table->engine = 'InnoDB';
             $table->timestamps();
         });
     }

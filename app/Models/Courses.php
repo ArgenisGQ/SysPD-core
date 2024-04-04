@@ -39,7 +39,7 @@ class Courses extends Model
 
     //Relacion uno a muchos
     public function user(){
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);
     }
     //metodo para mostrar slug y no el id
     /* public function getRouteKeyName()

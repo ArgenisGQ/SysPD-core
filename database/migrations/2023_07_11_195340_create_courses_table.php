@@ -49,6 +49,7 @@ return new class extends Migration
             /* $table->unsignedBigInteger('period_id')->nullable();
             $table->foreign('period_id')->references('id')->on('periods'); */
 
+            $table->engine = 'InnoDB';
             $table->timestamps();
         });
     }
