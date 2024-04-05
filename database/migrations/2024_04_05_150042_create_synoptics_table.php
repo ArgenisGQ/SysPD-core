@@ -15,6 +15,19 @@ return new class extends Migration
     {
         Schema::create('synoptics', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
+            $table->string('code')->nullable();
+            $table->string('puporse')->nullable();
+            $table->string('priority')->nullable();
+            $table->string('total_hours')->nullable();
+            $table->string('t')->nullable();
+            $table->string('l_t')->nullable();
+            $table->string('i_sc_p')->nullable();
+            $table->string('s')->nullable();
+            $table->string('a')->nullable();
+            $table->string('hde')->nullable();
+
+            
             $table->timestamps();
         });
     }
