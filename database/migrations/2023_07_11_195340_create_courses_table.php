@@ -40,8 +40,8 @@ return new class extends Migration
             //$table->string('slug')->nullable();
             //$table->string('color')->nullable();
             //$table->string('turma')->unique()->nullable();
-            $table->string('id_dpto')->unique()->nullable();
-            $table->string('id_faculty')->unique()->nullable();
+            //$table->string('id_dpto')->unique()->nullable();
+            //$table->string('id_faculty')->unique()->nullable();
 
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
