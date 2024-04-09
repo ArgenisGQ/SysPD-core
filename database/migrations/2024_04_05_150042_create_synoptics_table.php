@@ -27,6 +27,10 @@ return new class extends Migration
             $table->string('a')->nullable();
             $table->string('hde')->nullable();
 
+            $table->string('comp_esp')->nullable(); //Programa Sinoptico (P.S.) - Competencia Especifica
+            $table->string('crit_desemp')->nullable(); //P.S. - Criterio de Desempeño
+            $table->string('extruc_conten')->nullable(); //P.S. - Estructura de las Unidades de Aprendizaje / Contenido
+
             
             $table->timestamps();
         });

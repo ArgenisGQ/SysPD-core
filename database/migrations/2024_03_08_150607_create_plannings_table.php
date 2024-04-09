@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('curricularunit');
             $table->string('code');
             $table->string('section')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->engine = 'InnoDB';
             $table->timestamps();
         });
