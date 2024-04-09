@@ -20,6 +20,16 @@ class Synoptic extends Model
         'i_sc_p',
         's',
         'a',
-        'hde'
+        'hde',
+        'comp_esp',
+        'crit_desemp',
+        'extruc_conten'
     ];
+
+    //Relacion de uno a muchos
+
+    public function courses()
+    {
+        return $this->hasMany(Courses::class);
+    }
 }

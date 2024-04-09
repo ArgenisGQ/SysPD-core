@@ -37,9 +37,14 @@ class Courses extends Model
         //'color',
     ];
 
-    //Relacion uno a muchos
+    //Relacion uno a muchos inverso
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    //Relacion uno a muchos inverso
+    public function synoptic(){
+        return $this->belongsTo(Synoptic::class);
     }
     //metodo para mostrar slug y no el id
     /* public function getRouteKeyName()
