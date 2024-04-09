@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('code')->nullable();
-            $table->string('puporse')->nullable();
+            $table->string('purpose')->nullable();
             $table->string('priority')->nullable();
             $table->string('total_hours')->nullable();
             $table->string('t')->nullable();
@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('crit_desemp')->nullable(); //P.S. - Criterio de Desempeño
             $table->string('extruc_conten')->nullable(); //P.S. - Estructura de las Unidades de Aprendizaje / Contenido
 
-            
+
             $table->timestamps();
         });
     }
