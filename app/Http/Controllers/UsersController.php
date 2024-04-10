@@ -10,6 +10,7 @@ use Firebase\JWT\JWT;
 use DateTimeImmutable;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\APIController;
+use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Support\Facades\Hash;
@@ -95,6 +96,7 @@ class UsersController extends Controller
     public function show($id)
     {
 
+
             //Buscar el usuario
             $user = User::findOrfail($id);
             if (!$user){
@@ -103,9 +105,12 @@ class UsersController extends Controller
                 ],404);
             }
 
+            $users = UserResource::collection(User::all());
+
             //retornar el JSON
             return response()->json([
-                'users' => $user->courses
+                'users' => $user,
+                'users full' => $users
             ],200);
 
     }

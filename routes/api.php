@@ -121,7 +121,7 @@ Route::middleware(["auth:api"])->group(function(){
     Route::get('respondwithtoken', [AuthController::class, 'respondWithToken']);
 
     //USUARIOS
-    Route::resource('users', UsersController::class)
+    Route::apiResource('users', UsersController::class)
            ->only(['index','show','store','update','destroy']);
     //CURSOS
     Route::resource('courses', CoursesController::class)
