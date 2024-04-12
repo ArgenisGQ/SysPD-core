@@ -106,7 +106,13 @@ class UsersController extends Controller
                 ],404);
             }
 
-            $users = UserResource::collection(User::with(['courses'])->get());
+            /* $users = UserResource::collection(User::with('courses')->get()); */
+
+            $users = UserResource::collection(User::with('courses'))->where('id',$id)->first();
+
+            /* $users = User::with(['courses','synoptic'])->get(); */
+
+            /* dd($users); */
 
             //retornar el JSON
             return response()->json([

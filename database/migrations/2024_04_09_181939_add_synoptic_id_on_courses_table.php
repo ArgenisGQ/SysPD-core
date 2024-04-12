@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->unsignedBigInteger('synoptic_id')->nullable();
-            $table->foreign('synoptic_id')->references('id')->on('synoptics');
+            /* $table->unsignedBigInteger('synoptic_id')->nullable();
+            $table->foreign('synoptic_id')->references('id')->on('synoptics'); */
+
+            $table->foreignId('synoptic_id')->nullable()->constrained('synoptics')->onUpdate('cascade');
         });
     }
 

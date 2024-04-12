@@ -24,6 +24,7 @@ class UserResource extends JsonResource
             'name'      => $this->name,
             'email'     => $this->email,
             /* 'password'  => $this->password, */
+            /* 'courses' => CourseResource::collection($this->whenLoaded('courses')) */
             'courses' => CourseResource::collection($this->whenLoaded('courses'))
             /* 'courses' =>  new CourseResource($this->courses) */
         ];

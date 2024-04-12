@@ -43,8 +43,10 @@ return new class extends Migration
             //$table->string('id_dpto')->unique()->nullable();
             //$table->string('id_faculty')->unique()->nullable();
 
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            /* $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users'); */
+
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade');
 
             /* $table->unsignedBigInteger('period_id')->nullable();
             $table->foreign('period_id')->references('id')->on('periods'); */

@@ -20,7 +20,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array<int, string>
      */
     protected $fillable = [
-         
+
     ];
 
     /**
@@ -60,6 +60,7 @@ class User extends Authenticatable implements JWTSubject
     //Relacion de uno a muchos
     public function courses()
     {
+       /*  return $this->hasMany(Courses::class); */
         return $this->hasMany(Courses::class);
     }
 }
