@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CourseResource;
 use App\Models\Courses;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -67,9 +68,14 @@ class CoursesController extends Controller
             ],404);
         }
 
+        /* $courses = CourseResource::collection(Courses::with('user')->get()); */
+        /* $courses = CourseResource::collection(Courses::all()); */
+        $courses = CourseResource::collection(Courses::with('user')->where('id',$id)->get());
+
         //retornar el JSON
         return response()->json([
-            'course' => $course
+            'course' => $course,
+            'courses relation' => $courses
         ],200);
     }
 
