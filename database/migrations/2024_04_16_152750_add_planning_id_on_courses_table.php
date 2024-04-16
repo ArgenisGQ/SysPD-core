@@ -14,12 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('courses', function (Blueprint $table) {
-            /* $table->unsignedBigInteger('synoptic_id')->nullable();
-            $table->foreign('synoptic_id')->references('id')->on('synoptics'); */
-
-            $table->foreignId('synoptic_id')->nullable()->constrained('synoptics')->onUpdate('cascade');
-           /*  $table->foreignId('planning_id')->nullable()->constrained('plannings')->onUpdate('cascade'); */
-
+            $table->foreignId('planning_id')->nullable()->constrained('plannings')->onUpdate('cascade');
         });
     }
 
@@ -31,8 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->unsignedBigInteger('synoptic_id');
-            /* $table->unsignedBigInteger('planning_id'); */
+            $table->unsignedBigInteger('planning_id');
         });
     }
 };

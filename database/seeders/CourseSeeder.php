@@ -20,28 +20,32 @@ class CourseSeeder extends Seeder
             'code'      => "AAAA-0001",
             'section'   => "AA01A0A",
             'user_id'   => "1",
-            'synoptic_id' => "1"
+            'synoptic_id' => "1",
+            /* 'planning_id' => "1" */
         ]);
         DB::table('courses')->insert([
             'name'      => "Curso01",
             'code'      => "AAAA-0001",
             'section'   => "AA02A0A",
             'user_id'   => "1",
-            'synoptic_id' => "1"
+            'synoptic_id' => "1",
+            /* 'planning_id' => "2" */
         ]);
         DB::table('courses')->insert([
             'name'      => "Curso02",
-            'code'      => "AAAA-0001",
+            'code'      => "AAAA-0002",
             'section'   => "AA01A0A",
             'user_id'   => "1",
-            'synoptic_id' => "2"
+            'synoptic_id' => "2",
+            /* 'planning_id' => "3" */
         ]);
         DB::table('courses')->insert([
             'name'      => "Curso02",
-            'code'      => "AAAA-0001",
+            'code'      => "AAAA-0002",
             'section'   => "AA02A0A",
             'user_id'   => "1",
-            'synoptic_id' => "2"
+            'synoptic_id' => "2",
+            /* 'planning_id' => "4" */
         ]);
     }
 }

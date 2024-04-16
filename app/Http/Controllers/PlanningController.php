@@ -6,6 +6,7 @@ use App\Models\Planning;
 use Database\Seeders\PlanningSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Resources\PlanningResource;
 
 class PlanningController extends Controller
 {
@@ -71,10 +72,13 @@ class PlanningController extends Controller
                 'message'=>'Planning Not Found'
             ],404);
         }
+        /* $courses = CourseResource::collection(Courses::with('user')->where('id',$id)->get()); */
+        $plannings = PlanningResource::collection(Planning::with('user')->where('id',$id)->get());
 
         //retornar el JSON
         return response()->json([
-            'planning' => $planning
+            'planning' => $planning,
+            'planning full' => $plannings
         ],200);
     }
 
@@ -156,4 +160,3 @@ class PlanningController extends Controller
          ],200); */
     }
 }
- 

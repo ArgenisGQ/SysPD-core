@@ -18,22 +18,30 @@ class PlanningSeeder extends Seeder
         DB::table('plannings')->insert([
             'curricularunit'      => "UNIDAD Curso01",
             'code'                => "AAAA-0001",
-            'section'             => "AA01A0A"
+            'section'             => "AA01A0A",
+            'user_id'             => "1",
+            'course_id'           => "1"
         ]);
         DB::table('plannings')->insert([
             'curricularunit'      => "UNIDAD Curso01",
             'code'                => "AAAA-0001",
-            'section'             => "AA02A0A"
+            'section'             => "AA02A0A",
+            'user_id'             => "1",
+            'course_id'           => "1"
         ]);
         DB::table('plannings')->insert([
             'curricularunit'      => "UNIDAD Curso02",
-            'code'                => "AAAA-0001",
-            'section'             => "AA01A0A"
+            'code'                => "AAAA-0002",
+            'section'             => "AA01A0A",
+            'user_id'             => "1",
+            'course_id'           => "2"
         ]);
         DB::table('plannings')->insert([
             'curricularunit'      => "UNIDAD Curso02",
-            'code'                => "AAAA-0001",
-            'section'             => "AA02A0A"
+            'code'                => "AAAA-0002",
+            'section'             => "AA02A0A",
+            'user_id'             => "1",
+            'course_id'           => "2"
         ]);
     }
 }

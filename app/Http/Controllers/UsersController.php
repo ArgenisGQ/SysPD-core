@@ -108,7 +108,7 @@ class UsersController extends Controller
 
             /* $users = UserResource::collection(User::with('courses')->get()); */
 
-            $users = UserResource::collection(User::with('courses')->where('id',$id)->get());
+            $users = UserResource::collection(User::with(['courses','plannings'])->where('id',$id)->get());
 
             /* $users = User::with(['courses','synoptic'])->get(); */
 

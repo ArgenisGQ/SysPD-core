@@ -40,11 +40,13 @@ class CourseResource extends JsonResource
         'unitTotal'     => $this->unitTotal,
         /* 'user_id'       => $this->user_id, */
         /* 'synoptic_id'   => $this->synoptic_id, */
+        /* 'planning_id'   => $this->synoptic_id, */
 
         /* 'user' => UserResource::collection($this->whenLoaded('user')) */
         /* 'user' => UserResource::collection($this->whenLoaded('user')) */
-        'synoptic' => new SynopticResource($this->synoptic),
-        'user' => new UserResource($this->user)
+        'synoptic'      => new SynopticResource($this->synoptic),
+        'user'          => new UserResource($this->user),
+        /* 'plannings'     => new PlanningResource($this->plannings) */
 
         ];
     }

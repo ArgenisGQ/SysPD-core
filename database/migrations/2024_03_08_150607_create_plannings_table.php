@@ -18,8 +18,14 @@ return new class extends Migration
             $table->string('curricularunit');
             $table->string('code');
             $table->string('section')->nullable();
-            $table->unsignedBigInteger('user_id')->nullable();
+
+            /* $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('course_id')->nullable();
+            $table->foreign('course_id')->references('id')->on('courses'); */
+
+            $table->foreignId('user_id')->nullable()->constrained('users')->onUpdate('cascade');
+            $table->foreignId('course_id')->nullable()->constrained('courses')->onUpdate('cascade');
             $table->engine = 'InnoDB';
             $table->timestamps();
         });

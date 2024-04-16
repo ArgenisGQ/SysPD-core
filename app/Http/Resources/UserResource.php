@@ -4,6 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\CourseResource;
+use App\Http\Resources\PlanningResource;
+use App\Models\Planning;
 
 class UserResource extends JsonResource
 {
@@ -25,7 +27,8 @@ class UserResource extends JsonResource
             'email'     => $this->email,
             /* 'password'  => $this->password, */
             /* 'courses' => CourseResource::collection($this->whenLoaded('courses')) */
-            'courses' => CourseResource::collection($this->whenLoaded('courses'))
+            'courses' => CourseResource::collection($this->whenLoaded('courses')),
+            'plannings' => PlanningResource::collection($this->whenLoaded('courses'))
             /* 'courses' =>  new CourseResource($this->courses) */
         ];
     }

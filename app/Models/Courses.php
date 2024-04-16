@@ -31,8 +31,9 @@ class Courses extends Model
         'unit16',
         'unitTotal',
         'user_id',
-        'id_dpto',
-        'id_faculty',
+        'planning_id',
+        /* 'id_dpto', */
+        /* 'id_faculty', */
         //'slug',
         //'color',
     ];
@@ -45,6 +46,11 @@ class Courses extends Model
     //Relacion uno a muchos inverso
     public function synoptic(){
         return $this->belongsTo(Synoptic::class);
+    }
+
+    //Relacion de uno a muchos
+    public function plannings(){
+        return $this->hasMany(Planning::class);
     }
     //metodo para mostrar slug y no el id
     /* public function getRouteKeyName()
