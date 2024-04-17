@@ -10,9 +10,14 @@ class Units extends Model
     use HasFactory;
 
     protected $fillable = [
-        /* 'curricularunit',
-        'code',
-        'section' */
+        'contenido',
+        'comp_esp',
+        'crit_desemp',
+        'est_didac',
+        'eval',
+        'rec_apren',
+        'biblio',
+        'plan_id'
     ];
 
     //Relacion uno a muchos inverso

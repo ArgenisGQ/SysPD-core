@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('units', function (Blueprint $table) {
             $table->id();
+            $table->string('contenido')->nullable();
+            $table->string('comp_esp')->nullable();
+            $table->string('crit_desemp')->nullable();
+            $table->string('est_didac')->nullable();
+            $table->string('eval')->nullable();
+            $table->string('rec_apren')->nullable();
+            $table->string('biblio')->nullable();
 
             $table->unsignedBigInteger('plan_id')->nullable();
             $table->foreign('plan_id')->references('id')->on('plans');

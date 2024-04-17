@@ -11,9 +11,18 @@ class Plans extends Model
     use HasFactory;
 
     protected $fillable = [
-        /* 'curricularunit',
-        'code',
-        'section' */
+        'unit',
+        'comp_esp',
+        'crit_desemp',
+        'est_eva',
+        'inst_eva',
+        'tip_eva',
+        'evid_eva',
+        'retro',
+        'lapso',
+        'ponderacion',
+        'unit_id',
+        'planning_id'
     ];
 
     //Relacion uno a muchos inverso
