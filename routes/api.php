@@ -9,6 +9,7 @@ use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\HomeController;
 use App\Helpers\AdminHelper;
 use App\Http\Controllers\PlanningController;
+use App\Http\Controllers\PlansController;
 use App\Models\Courses;
 use Illuminate\Routing\Router;
 
@@ -128,6 +129,9 @@ Route::middleware(["auth:api"])->group(function(){
            ->only(['index','show','store','update','destroy']);
     //PLANIFICACION
     Route::resource('plannings', PlanningController::class)
+           ->only(['index','show','store','update','destroy']);
+    //PLANIFICACION - PLAN UNIDADES
+    Route::resource('plans', PlansController::class)
            ->only(['index','show','store','update','destroy']);
 });
 /* Route::resource(images, [ImageController::class]); */
