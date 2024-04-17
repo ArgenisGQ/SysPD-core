@@ -17,13 +17,14 @@ class PlanningResource extends JsonResource
         /* return parent::toArray($request); */
 
         return[
-            'curricularunit'    => $this->currcularunit,
+            'curricularunit'    => $this->curricularunit,
             'code'              => $this->code,
             'section'           => $this->section,
             'user_id'           => $this->user_id,
             'course_id'         => $this->course_id,
             'user'              => new UserResource($this->user),
-            'course'            => new CourseResource($this->course)
+            'course'            => new CourseResource($this->course),
+            'plans'             => PlanResource::collection($this->whenLoaded('plans'))
         ];
 
     }

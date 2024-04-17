@@ -14,7 +14,8 @@ class Planning extends Model
         'code',
         'section',
         'user_id',
-        'course_id'
+        'course_id',
+        'plan_id'
     ];
 
     //Relacion de uno a muchos

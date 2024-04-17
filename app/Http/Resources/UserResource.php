@@ -28,7 +28,8 @@ class UserResource extends JsonResource
             /* 'password'  => $this->password, */
             /* 'courses' => CourseResource::collection($this->whenLoaded('courses')) */
             'courses' => CourseResource::collection($this->whenLoaded('courses')),
-            'plannings' => PlanningResource::collection($this->whenLoaded('courses'))
+            /* 'plannings' => PlanningResource::collection($this->whenLoaded('courses')) */
+            'plannings' => PlanningResource::collection($this->whenLoaded('plannings'))
             /* 'courses' =>  new CourseResource($this->courses) */
         ];
     }
