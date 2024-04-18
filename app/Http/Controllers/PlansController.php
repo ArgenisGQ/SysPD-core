@@ -135,19 +135,19 @@ class PlansController extends Controller
     public function destroy($id)
     {
          //Detalles
-         $planning = Plans::find($id);
-         if(!$planning){
+         $plan = Plans::find($id);
+         if(!$plan){
              return response()->json([
                  'message'=>'Planning not found!!'
              ],404);
          };
 
          //Borrar Usuario
-         $planning->delete();
+         $plan->delete();
 
          //Retornnando JSON
          return response()->json([
-             'message' => 'Planning successfully deleted.'
+             'message' => 'Plan successfully deleted.'
          ],200);
 
          /* return response()->json([
