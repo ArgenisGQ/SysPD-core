@@ -39,22 +39,26 @@ class UnitsController extends Controller
         /* $input['password'] = bcrypt($input['password']); */
         /* $user = User::create($input); */
 
-        /* $planning = Planning::create([
-            'curricularunit'       => $request->curricularunit,
-            'code'                 => $request->code,
-            'section'              => $request->section,
-        ]); */
+        $units = Units::create([
+            'contenido'             => $request->contenido,
+            'comp_esp'              => $request->comp_esp,
+            'crit_desemp'           => $request->crit_desemp,
+            'est_didac'             => $request->est_didac,
+            'eval'                  => $request->eval,
+            'rec_apren'             => $request->rec_apren,
+            'biblio'                => $request->biblio,
+            'plan_id'               => $request->plan_id
+        ]);
 
-        /* if ($planning) {
-
-
+        if ($units) {
+            
             $success = [
-                'planning' => $planning,
+                'units' => $units,
 
             ];
 
-            return response()->json([$success, 'Planning registered successfully'], 201);
-        } */
+            return response()->json([$success, 'Units registered successfully'], 201);
+        }
     }
 
 

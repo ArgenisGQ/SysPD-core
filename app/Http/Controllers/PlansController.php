@@ -39,22 +39,32 @@ class PlansController extends Controller
         /* $input['password'] = bcrypt($input['password']); */
         /* $user = User::create($input); */
 
-        /* $planning = Planning::create([
-            'curricularunit'       => $request->curricularunit,
-            'code'                 => $request->code,
-            'section'              => $request->section,
-        ]); */
+        $plans = Plans::create([
 
-        /* if ($planning) {
+            'unit'              => $request->unit,
+            'comp_esp'          => $request->comp_esp,
+            'crit_desemp'       => $request->crit_desemp,
+            'est_eva'           => $request->est_eva,
+            'inst_eva'          => $request->inst_eva,
+            'tip_eva'           => $request->tip_eva,
+            'evid_eva'          => $request->evid_eva,
+            'retro'             => $request->retro,
+            'lapso'             => $request->lapso,
+            'ponderacion'       => $request->ponderacion,
+            'unit_id'           => $request->unit_id,
+            'planning_id'       => $request->planning_id
+        ]);
+
+        if ($plans) {
 
 
             $success = [
-                'planning' => $planning,
+                'plans' => $plans,
 
             ];
 
-            return response()->json([$success, 'Planning registered successfully'], 201);
-        } */
+            return response()->json([$success, 'Plans registered successfully'], 201);
+        }
     }
 
 
@@ -83,7 +93,7 @@ class PlansController extends Controller
         //falta validacion //REVISAR LA DUPLICIDAD PARA  USERNAME Y EL EMAIL
         $validator = Validator::make(/* $input */ $request->all(), [
             /* 'username' => 'required|string|max:255|unique:users', */
-            'curricularunit'     => 'required|string|max:255',
+            /* 'curricularunit'     => 'required|string|max:255', */
             /* 'email'    => 'required|string|email|max:255|unique:users', */
             /* 'password' => 'required|string|min:8' */
 
