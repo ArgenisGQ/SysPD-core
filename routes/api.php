@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Helpers\AdminHelper;
 use App\Http\Controllers\PlanningController;
 use App\Http\Controllers\PlansController;
+use App\Http\Controllers\UnitsController;
 use App\Models\Courses;
 use Illuminate\Routing\Router;
 
@@ -132,6 +133,9 @@ Route::middleware(["auth:api"])->group(function(){
            ->only(['index','show','store','update','destroy']);
     //PLANIFICACION - PLAN UNIDADES
     Route::resource('plans', PlansController::class)
+           ->only(['index','show','store','update','destroy']);
+    //PLANIFICACION - UNIDADES (SEMANAS)
+    Route::resource('units', UnitsController::class)
            ->only(['index','show','store','update','destroy']);
 });
 /* Route::resource(images, [ImageController::class]); */
