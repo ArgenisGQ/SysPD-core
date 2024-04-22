@@ -51,7 +51,7 @@ class UnitsController extends Controller
         ]);
 
         if ($units) {
-            
+
             $success = [
                 'units' => $units,
 
@@ -87,7 +87,7 @@ class UnitsController extends Controller
         //falta validacion //REVISAR LA DUPLICIDAD PARA  USERNAME Y EL EMAIL
         $validator = Validator::make(/* $input */ $request->all(), [
             /* 'username' => 'required|string|max:255|unique:users', */
-            'curricularunit'     => 'required|string|max:255',
+            /* 'curricularunit'     => 'required|string|max:255', */
             /* 'email'    => 'required|string|email|max:255|unique:users', */
             /* 'password' => 'required|string|min:8' */
 
@@ -132,7 +132,13 @@ class UnitsController extends Controller
         $data->fill($request->all());
         $data->save();
 
-        return response()->json($data, 200);
+        /* return response()->json($data, 200); */
+
+        //Retornnando JSON
+        return response()->json([
+            'data: ' => $data,
+            'message' => 'Unit successfully update!.'
+        ],200);
     }
 
 
