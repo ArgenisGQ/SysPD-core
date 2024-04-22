@@ -72,12 +72,15 @@ class UnitsController extends Controller
             ],404);
         }
         /* $courses = CourseResource::collection(Courses::with('user')->where('id',$id)->get()); */
-        $units = UnitResource::collection(Units::with('plan')->where('id',$id)->get());
+
+
+
+        $unitz = UnitResource::collection(Units::with(['plan'])->where('id',$id)->get());
 
         //retornar el JSON
         return response()->json([
             'units' => $units,
-            'units full' => $units
+            'units full' => $unitz
         ],200);
     }
 

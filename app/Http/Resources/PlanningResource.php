@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\PlanResource;
 
 class PlanningResource extends JsonResource
 {
@@ -22,9 +23,10 @@ class PlanningResource extends JsonResource
             'section'           => $this->section,
             'user_id'           => $this->user_id,
             'course_id'         => $this->course_id,
+            'plans'             => PlanResource::collection($this->whenLoaded('plans')),
             'user'              => new UserResource($this->user),
             'course'            => new CourseResource($this->course),
-            'plans'             => PlanResource::collection($this->whenLoaded('plans'))
+            /* 'plans'             => PlanResource::collection($this->whenLoaded('plans')) */
         ];
 
     }

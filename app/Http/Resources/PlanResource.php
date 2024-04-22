@@ -26,7 +26,7 @@ class PlanResource extends JsonResource
             'retro'         => $this->retro,
             'lapso'         => $this->lapso,
             'ponderacion'   => $this->ponderacion,
-            'unit_id'       => $this->unit_id,
+            /* 'unit_id'       => $this->unit_id, */
             'planning_id'   => $this->planning_id,
 
             'planning'      => new PlanningResource($this->planning),

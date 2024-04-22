@@ -78,12 +78,19 @@ class PlansController extends Controller
             ],404);
         }
         /* $courses = CourseResource::collection(Courses::with('user')->where('id',$id)->get()); */
-        $plans = PlanResource::collection(Plans::with('planning')->where('id',$id)->get());
+
+        /* $planz = PlanResource::collection(Plans::with(['units'])->where('id',$id)->get()); */
+
+        $planzz = $plans->units();
+
+        dd($planzz);
+
+        /* $planz = $plans->units(); */
 
         //retornar el JSON
         return response()->json([
             'plans' => $plans,
-            'plans full' => $plans
+            'plans full' => $planzz
         ],200);
     }
 
