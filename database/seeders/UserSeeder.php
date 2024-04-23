@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'username'    => "admin",
             'idcard'      => "00000",
+            'phone'       => "0414",
             'actived'     => "true",
             'name'        => "admin",
             'email'       => "admin@uny.edu.ve",
@@ -27,6 +28,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'username'    => "user",
             'idcard'      => "00001",
+            'phone'       => "0412",
             'actived'     => "true",
             'name'        => "user",
             'email'       => "user@uny.edu.ve",

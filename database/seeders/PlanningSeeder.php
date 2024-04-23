@@ -19,6 +19,7 @@ class PlanningSeeder extends Seeder
             'curricularunit'      => "UNIDAD Curso01",
             'code'                => "AAAA-0001",
             'section'             => "AA01A0A",
+            'period'             => "2023-1",
             'user_id'             => "1",
             'course_id'           => "1",
             /* 'plan_id'             => "1" */
@@ -27,6 +28,7 @@ class PlanningSeeder extends Seeder
             'curricularunit'      => "UNIDAD Curso01",
             'code'                => "AAAA-0001",
             'section'             => "AA02A0A",
+            'period'             => "2023-1",
             'user_id'             => "1",
             'course_id'           => "1",
             /* 'plan_id'             => "2" */
@@ -35,6 +37,7 @@ class PlanningSeeder extends Seeder
             'curricularunit'      => "UNIDAD Curso02",
             'code'                => "AAAA-0002",
             'section'             => "AA01A0A",
+            'period'             => "2023-1",
             'user_id'             => "1",
             'course_id'           => "2",
             /* 'plan_id'             => "1" */
@@ -43,6 +46,7 @@ class PlanningSeeder extends Seeder
             'curricularunit'      => "UNIDAD Curso02",
             'code'                => "AAAA-0002",
             'section'             => "AA02A0A",
+            'period'              => "2023-1",
             'user_id'             => "1",
             'course_id'           => "2",
             /* 'plan_id'             => "1" */

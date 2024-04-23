@@ -18,6 +18,7 @@ return new class extends Migration
             /* $table->string('username')->nullable(); */
             $table->string('username')->unique();
             $table->string('idcard')->unique();
+            $table->string('phone')->nullable();
             $table->boolean('actived')->default(false);
             $table->string('name');
             $table->string('email')->unique();

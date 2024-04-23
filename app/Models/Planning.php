@@ -13,6 +13,7 @@ class Planning extends Model
         'curricularunit',
         'code',
         'section',
+        'period',
         'user_id',
         'course_id',
         'plan_id'

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('curricularunit');
             $table->string('code');
             $table->string('section')->nullable();
+            $table->string('period')->nullable();
 
             /* $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');

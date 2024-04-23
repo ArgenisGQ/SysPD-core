@@ -21,6 +21,7 @@ class PlanningResource extends JsonResource
             'curricularunit'    => $this->curricularunit,
             'code'              => $this->code,
             'section'           => $this->section,
+            'period'            => $this->period,
             'user_id'           => $this->user_id,
             'course_id'         => $this->course_id,
             'plans'             => PlanResource::collection($this->whenLoaded('plans')),
