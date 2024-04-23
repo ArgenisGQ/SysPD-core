@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('rec_apren')->nullable();
             $table->string('biblio')->nullable();
 
-            $table->unsignedBigInteger('plan_id')->nullable();
-            $table->foreign('plan_id')->references('id')->on('plans');
+            $table->unsignedBigInteger('plans_id')->nullable();
+            $table->foreign('plans_id')->references('id')->on('plans');
             $table->timestamps();
         });
     }

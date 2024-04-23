@@ -19,8 +19,7 @@ class Planning extends Model
     ];
 
     //Relacion de uno a muchos
-    public function plans()
-    {
+    public function plans(){
         return $this->hasMany(Plans::class);
     }
 

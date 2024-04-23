@@ -31,8 +31,7 @@ class Plans extends Model
     }
 
     //Relacion de uno a muchos
-    public function units()
-    {
-        return $this->hasMany(Unit::class);
+    public function units(){
+        return $this->hasMany(Units::class);
     }
 }

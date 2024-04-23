@@ -23,7 +23,7 @@ class UnitResource extends JsonResource
             'eval'              => $this->eval,
             'rec_apren'         => $this->rec_apren,
             'biblio'            => $this->biblio,
-            'plan_id'           => $this->plan_id,
+            'plans_id'          => $this->plans_id,
             'plan'              => new PlanResource($this->plan),
         ];
     }

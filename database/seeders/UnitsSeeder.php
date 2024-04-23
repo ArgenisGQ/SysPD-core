@@ -23,7 +23,7 @@ class UnitsSeeder extends Seeder
             'eval'              => "Evaluacion/Realimentacion",
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
-            'plan_id'           => "1"
+            'plans_id'           => "1"
         ]);
         DB::table('units')->insert([
             'contenido'         => "02 Estructura de las unidades de aprendizaje - Contenido",
@@ -33,7 +33,7 @@ class UnitsSeeder extends Seeder
             'eval'              => "Evaluacion/Realimentacion",
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
-            'plan_id'           => "1"
+            'plans_id'           => "1"
         ]);
         DB::table('units')->insert([
             'contenido'         => "03 Estructura de las unidades de aprendizaje - Contenido",
@@ -43,7 +43,7 @@ class UnitsSeeder extends Seeder
             'eval'              => "Evaluacion/Realimentacion",
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
-            'plan_id'           => "1"
+            'plans_id'           => "1"
         ]);
 
 

@@ -17,7 +17,7 @@ class Units extends Model
         'eval',
         'rec_apren',
         'biblio',
-        'plan_id'
+        'plans_id'
     ];
 
     //Relacion uno a muchos inverso

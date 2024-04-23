@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::table('plans', function (Blueprint $table) {
-            /* $table->unsignedBigInteger('unit_id')->nullable(); */
-            /* $table->foreign('unit_id')->references('id')->on('units')->onUpdate('cascade'); */
+            $table->unsignedBigInteger('unit_id')->nullable();
+            $table->foreign('unit_id')->references('id')->on('units')->onUpdate('cascade');
 
             /* $table->foreign('unit_id')->references('id')->on('units')
             ->onUpdate('cascade')->onDelete('set null'); */
 
-            $table->foreignId('unit_id')->nullable()
-            ->constrained('units')->onDelete('set null');
+            /* $table->foreignId('unit_id')->nullable()
+            ->constrained('units')->onDelete('set null'); */
         });
     }
 
