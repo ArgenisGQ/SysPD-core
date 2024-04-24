@@ -14,6 +14,7 @@ class Planning extends Model
         'code',
         'section',
         'period',
+        'modalidad',
         'user_id',
         'course_id',
         'plan_id'

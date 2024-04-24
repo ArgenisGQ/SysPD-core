@@ -26,6 +26,8 @@ class PlanningController extends Controller
     {
         /*  $input = $request->only('name', 'email', 'password', 'c_password'); */
 
+        $user_act = auth('api')->user()->id;
+
         $validator = Validator::make(/* $input */ $request->all(), [
             'curricularunit'      => 'required|string|max:255|unique:plannings',
             'code'                => 'required|string|max:255|unique:plannings',
@@ -47,6 +49,9 @@ class PlanningController extends Controller
             'curricularunit'       => $request->curricularunit,
             'code'                 => $request->code,
             'section'              => $request->section,
+            'period'               => $request->period,
+            'modalidad'            => $request->modalidad,
+            'user_id'              => $user_act
         ]);
 
         if ($planning) {

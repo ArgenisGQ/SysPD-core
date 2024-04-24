@@ -96,7 +96,7 @@ class UsersController extends Controller
     //Mostrar datos del usuario especifico
     public function show($id)
     {
-
+            $user_act = auth('api')->user();
 
             //Buscar el usuario
             $user = User::findOrfail($id);
@@ -117,7 +117,8 @@ class UsersController extends Controller
             //retornar el JSON
             return response()->json([
                 'users' => $user,
-                'users full' => $users
+                'users full' => $users,
+                'user actually' => $user_act
             ],200);
 
     }

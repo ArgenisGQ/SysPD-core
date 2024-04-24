@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('curricularunit');
             $table->string('code');
             $table->string('section')->nullable();
-            $table->string('period')->nullable();
+            $table->string('period')->nullable();// periodo academico
+            $table->integer('modalidad')->default(0)->nullable();// 0 - presencial, 1 - mixta, 3 - virtual
 
             /* $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');

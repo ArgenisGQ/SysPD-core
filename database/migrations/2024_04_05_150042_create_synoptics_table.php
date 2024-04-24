@@ -31,6 +31,8 @@ return new class extends Migration
             $table->string('crit_desemp')->nullable(); //P.S. - Criterio de Desempeño
             $table->string('extruc_conten')->nullable(); //P.S. - Estructura de las Unidades de Aprendizaje / Contenido
 
+            $table->integer('facul_decan')->default(0)->nullable(); //Facultad/Decanato
+            $table->integer('carr_prog')->default(0)->nullable(); // Carrera-Programa/Programa
 
             $table->timestamps();
         });
