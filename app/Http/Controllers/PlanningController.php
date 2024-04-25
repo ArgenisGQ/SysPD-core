@@ -134,9 +134,16 @@ class PlanningController extends Controller
         $data->fill($request->except('password'));
         $data->save(); */
 
-        $data = Planning::find($id);
+        $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first();
+
+        $data = $planning;
         $data->fill($request->all());
         $data->save();
+        //para guardar solamente el campo de proposito 
+        $output = $planning ->course->synoptic->update([
+            'purpose' => $request->purpose
+        ]);
+        /* $data->save(); */
 
         return response()->json($data, 200);
     }

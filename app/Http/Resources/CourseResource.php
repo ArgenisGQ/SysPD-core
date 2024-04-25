@@ -39,7 +39,7 @@ class CourseResource extends JsonResource
         'unit16'        => $this->unit16,
         'unitTotal'     => $this->unitTotal,
         /* 'user_id'       => $this->user_id, */
-        /* 'synoptic_id'   => $this->synoptic_id, */
+        'synoptic_id'   => $this->synoptic_id,
         /* 'planning_id'   => $this->synoptic_id, */
 
         /* 'user' => UserResource::collection($this->whenLoaded('user')) */
