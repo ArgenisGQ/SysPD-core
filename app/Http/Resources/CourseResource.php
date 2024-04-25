@@ -38,6 +38,9 @@ class CourseResource extends JsonResource
         'unit15'        => $this->unit15,
         'unit16'        => $this->unit16,
         'unitTotal'     => $this->unitTotal,
+        'h_clases'      => $this->h_clases,
+        'h_tutoria'     => $this->h_tutoria,
+        'h_total'       => $this->h_total,
         /* 'user_id'       => $this->user_id, */
         'synoptic_id'   => $this->synoptic_id,
         /* 'planning_id'   => $this->synoptic_id, */

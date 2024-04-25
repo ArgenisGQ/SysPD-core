@@ -37,7 +37,10 @@ return new class extends Migration
             $table->Integer('unit16')->default(0)->nullable(); //ponderacion total de la unidad
             $table->integer('unitTotal')->default(4)->nullable(); //total de unidades activas a usar
             $table->integer('units')->default(0)->nullable(); //total de ponderacion de las unidades activas a usar
-            
+
+            $table->string('h_clases')->nullable(); //horario de clases
+            $table->string('h_tutoria')->nullable();//horario de tutoria docente
+            $table->string('h_total')->nullable();  //total de horas docente
             //$table->string('slug')->nullable();
             //$table->string('color')->nullable();
             //$table->string('turma')->unique()->nullable();
