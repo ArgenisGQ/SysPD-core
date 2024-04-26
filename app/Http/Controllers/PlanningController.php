@@ -93,7 +93,7 @@ class PlanningController extends Controller
         //falta validacion //REVISAR LA DUPLICIDAD PARA  USERNAME Y EL EMAIL
         $validator = Validator::make(/* $input */ $request->all(), [
             /* 'username' => 'required|string|max:255|unique:users', */
-            'curricularunit'     => 'required|string|max:255',
+            /* 'curricularunit'     => 'required|string|max:255', */
             /* 'email'    => 'required|string|email|max:255|unique:users', */
             /* 'password' => 'required|string|min:8' */
 
