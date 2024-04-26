@@ -136,16 +136,91 @@ class PlanningController extends Controller
 
         $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first();
 
-        $data = $planning;
-        $data->fill($request->all());
-        $data->save();
-        //para guardar solamente el campo de proposito 
-        $output = $planning ->course->synoptic->update([
-            'purpose' => $request->purpose
-        ]);
-        /* $data->save(); */
+        //form01
+        if ($request->step == 1) {
+            /* return response()->json([
+                'message'=>'ready!'
+            ],200); */
 
-        return response()->json($data, 200);
+            //validaciones
+
+           /*  $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first();
+ */
+            $data = $planning;
+            $data->fill($request->all());
+            $data->save();
+            //para guardar solamente el campo de proposito
+            $output = $planning ->course->synoptic->update([
+                'purpose' => $request->purpose
+            ]);
+            /* $data->save(); */
+
+            return response()->json($data, 200);
+
+        };
+
+        //form02
+        if ($request->step == 2) {
+            /* return response()->json([
+                'message'=>'ready!'
+            ],200); */
+
+            //validaciones
+
+            /* $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first(); */
+
+            //para guardar en usuarios
+            $userOut = $planning ->user->update([
+                'username' => $request->username,
+                'idcard'   => $request->idcard,
+                'phone'    => $request->phone,
+                'email'    => $request->email
+            ]);
+
+            //para guardar en cursos
+            $courseOut = $planning ->course->update([
+                'h_clases'  => $request->h_clases,
+                'h_tutoria' => $request->h_tutoria,
+                'h_total'   => $request->h_total
+            ]);
+
+
+            return response()->json([
+                'user'  => $userOut,
+                'course'=> $courseOut
+            ], 200);
+
+        };
+
+        //form03
+        if ($request->step == 3) {
+            /* return response()->json([
+                'message'=>'ready!'
+            ],200); */
+
+            //validaciones
+
+            $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first();
+
+            $data = $planning;
+            $data->fill($request->all());
+            $data->save();
+            //para guardar solamente el campo de proposito
+            $output = $planning ->course->synoptic->update([
+                'purpose' => $request->purpose
+            ]);
+            /* $data->save(); */
+
+            return response()->json($data, 200);
+
+        };
+
+
+
+
+        return response()->json([
+                'message'=>'no data!'
+            ],404);
     }
 
 
