@@ -200,18 +200,34 @@ class PlanningController extends Controller
 
             //validaciones
 
-            $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first();
+            /* $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first(); */
 
-            $data = $planning;
+            /* $data = $planning;
             $data->fill($request->all());
-            $data->save();
+            $data->save(); */
             //para guardar solamente el campo de proposito
-            $output = $planning ->course->synoptic->update([
+            /* $output = $planning ->course->synoptic->update([
                 'purpose' => $request->purpose
-            ]);
+            ]); */
             /* $data->save(); */
 
-            return response()->json($data, 200);
+            /* return response()->json($data, 200); */
+
+            //para guardar en cursos
+            $courseOut = $planning ->course->update([
+                'name'       => $request->name,
+                'unit01'     => $request->unit01,
+                'unit02'     => $request->unit01,
+                'unit03'     => $request->unit01,
+                'unit04'     => $request->unit01,
+                'unitTotal'  => $request->unitTotal,
+            ]);
+
+
+            return response()->json([
+                /* 'user'  => $userOut, */
+                'course'=> $courseOut
+            ], 200);
 
         };
 
