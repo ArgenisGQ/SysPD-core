@@ -14,6 +14,15 @@ class PlanUnitResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return[
+            'unit'          => $this->unit,
+            'comp_esp'      => $this->comp_esp,
+            'crit_desemp'   => $this->crit_desemp,
+            /* 'unit_id'       => $this->unit_id, */
+            'plan_id'   => $this->plan_id,
+
+            /* 'planning'      => new PlanningResource($this->planning), */
+            'plans'         => PlanResource::collection($this->whenLoaded('plans')),
+        ];
     }
 }
