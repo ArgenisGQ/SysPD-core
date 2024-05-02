@@ -34,4 +34,9 @@ class Plans extends Model
     public function units(){
         return $this->hasMany(Units::class);
     }
+
+    //Relacion uno a muchos inverso
+    public function plan_unit(){
+        return $this->belongsTo(Plan_unit::class);
+    }
 }
