@@ -28,8 +28,10 @@ class DatabaseSeeder extends Seeder
             CourseSeeder::class,
             PlanningSeeder::class,
             User_coursesSeeder::class,
+            PlanUnitSeeder::class,
             PlansSeeder::class,
-            UnitsSeeder::class
+            UnitsSeeder::class,
+
         ]);
     }
 }

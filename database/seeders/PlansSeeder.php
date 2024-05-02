@@ -16,9 +16,9 @@ class PlansSeeder extends Seeder
     public function run()
     {
         DB::table('plans')->insert([
-            'unit'          => "1",
+            /* 'unit'          => "1",
             'comp_esp'      => "Competencia Especifica",
-            'crit_desemp'   => "Criterio de Desempeño",
+            'crit_desemp'   => "Criterio de Desempeño", */
             'est_eva'       => "Estrategia de Evaluacion",
             'inst_eva'      => "Instrumento de Evaluacion",
             'tip_eva'       => "Tipo de Evaluacion",
@@ -27,12 +27,13 @@ class PlansSeeder extends Seeder
             'lapso'         => "lapso/Entrega",
             /* 'unit_id'       => "1", */
             'ponderacion'   => "10",
-            'planning_id'   => "1"
+            'planning_id'   => "1",
+            'plan_units_id' => "1"
         ]);
         DB::table('plans')->insert([
-            'unit'          => "1",
+            /* 'unit'          => "1",
             'comp_esp'      => "Competencia Especifica",
-            'crit_desemp'   => "Criterio de Desempeño",
+            'crit_desemp'   => "Criterio de Desempeño", */
             'est_eva'       => "Estrategia de Evaluacion",
             'inst_eva'      => "Instrumento de Evaluacion",
             'tip_eva'       => "Tipo de Evaluacion",
@@ -41,12 +42,13 @@ class PlansSeeder extends Seeder
             'lapso'         => "lapso/Entrega",
             /* 'unit_id'       => "2", */
             'ponderacion'   => "10",
-            'planning_id'   => "1"
+            'planning_id'   => "1",
+            'plan_units_id' => "1"
         ]);
         DB::table('plans')->insert([
-            'unit'          => "1",
+            /* 'unit'          => "1",
             'comp_esp'      => "Competencia Especifica",
-            'crit_desemp'   => "Criterio de Desempeño",
+            'crit_desemp'   => "Criterio de Desempeño", */
             'est_eva'       => "Estrategia de Evaluacion",
             'inst_eva'      => "Instrumento de Evaluacion",
             'tip_eva'       => "Tipo de Evaluacion",
@@ -55,7 +57,8 @@ class PlansSeeder extends Seeder
             'lapso'         => "lapso/Entrega",
             /* 'unit_id'       => "3", */
             'ponderacion'   => "10",
-            'planning_id'   => "1"
+            'planning_id'   => "1",
+            'plan_units_id' => "1"
         ]);
 
 

@@ -19,7 +19,7 @@ class PlanUnitResource extends JsonResource
             'comp_esp'      => $this->comp_esp,
             'crit_desemp'   => $this->crit_desemp,
             /* 'unit_id'       => $this->unit_id, */
-            'plan_id'   => $this->plan_id,
+            'plan_id'       => $this->plan_id,
 
             /* 'planning'      => new PlanningResource($this->planning), */
             'plans'         => PlanResource::collection($this->whenLoaded('plans')),
