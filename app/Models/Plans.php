@@ -11,9 +11,9 @@ class Plans extends Model
     use HasFactory;
 
     protected $fillable = [
-        'unit',
+        /* 'unit',
         'comp_esp',
-        'crit_desemp',
+        'crit_desemp', */
         'est_eva', //es la actividad
         'inst_eva',
         'tip_eva',
@@ -22,7 +22,8 @@ class Plans extends Model
         'lapso',
         'ponderacion',
         'unit_id',
-        'planning_id'
+        'planning_id',
+        'plan_units_id'
     ];
 
     //Relacion uno a muchos inverso

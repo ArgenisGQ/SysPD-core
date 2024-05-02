@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plan_unit;
+use App\Models\Plans;
 use Illuminate\Http\Request;
 use App\Http\Resources\PlanUnitResource;
+use Illuminate\Support\Facades\Validator;
 
 class PlanUnitController extends Controller
 {
@@ -38,19 +40,11 @@ class PlanUnitController extends Controller
         /* $input['password'] = bcrypt($input['password']); */
         /* $user = User::create($input); */
 
-        $plans = Plans::create([
+        $plans = Plan_unit::create([
 
             'unit'              => $request->unit,
             'comp_esp'          => $request->comp_esp,
             'crit_desemp'       => $request->crit_desemp,
-            'est_eva'           => $request->est_eva,
-            'inst_eva'          => $request->inst_eva,
-            'tip_eva'           => $request->tip_eva,
-            'evid_eva'          => $request->evid_eva,
-            'retro'             => $request->retro,
-            'lapso'             => $request->lapso,
-            'ponderacion'       => $request->ponderacion,
-            'unit_id'           => $request->unit_id,
             'planning_id'       => $request->planning_id
         ]);
 
@@ -70,15 +64,15 @@ class PlanUnitController extends Controller
     public function show($id)
     {
         //Buscar el plan didactico
-        $plans = Plans::findOrfail($id);
+        $plans = Plan_unit::findOrfail($id);
         if (!$plans){
             return $plans()->json([
-                'message'=>'Plans Not Found'
+                'message'=>'PlanUnits Not Found'
             ],404);
         }
         /* $courses = CourseResource::collection(Courses::with('user')->where('id',$id)->get()); */
 
-        $planz = PlanResource::collection(Plans::with(['units'])->where('id',$id)->get());
+        $planz = PlanUnitResource::collection(Plan_unit::with(['plans'])->where('id',$id)->get());
         /* $planz = $id; */
 
         /* $planzz = $plans->units();
@@ -89,8 +83,8 @@ class PlanUnitController extends Controller
 
         //retornar el JSON
         return response()->json([
-            'plans' => $plans,
-            'plans full' => $planz
+            'planunits' => $plans,
+            'planunits full' => $planz
         ],200);
     }
 
