@@ -28,7 +28,7 @@ class PlansSeeder extends Seeder
             /* 'unit_id'       => "1", */
             'ponderacion'   => "10",
             'planning_id'   => "1",
-            'plan_units_id' => "1"
+            'plan_unit_id' => "1"
         ]);
         DB::table('plans')->insert([
             /* 'unit'          => "1",
@@ -43,7 +43,7 @@ class PlansSeeder extends Seeder
             /* 'unit_id'       => "2", */
             'ponderacion'   => "10",
             'planning_id'   => "1",
-            'plan_units_id' => "1"
+            'plan_unit_id'  => "1"
         ]);
         DB::table('plans')->insert([
             /* 'unit'          => "1",
@@ -58,7 +58,7 @@ class PlansSeeder extends Seeder
             /* 'unit_id'       => "3", */
             'ponderacion'   => "10",
             'planning_id'   => "1",
-            'plan_units_id' => "1"
+            'plan_unit_id'  => "1"
         ]);
 
 

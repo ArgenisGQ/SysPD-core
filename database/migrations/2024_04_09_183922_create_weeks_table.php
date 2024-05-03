@@ -13,17 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('plan_units', function (Blueprint $table) {
+        Schema::create('weeks', function (Blueprint $table) {
             $table->id();
-            $table->string('unit')->nullable();
+            $table->string('contenido')->nullable();
             $table->string('comp_esp')->nullable();
             $table->string('crit_desemp')->nullable();
+            $table->string('est_didac')->nullable();
+            $table->string('eval')->nullable();
+            $table->string('rec_apren')->nullable();
+            $table->string('biblio')->nullable();
 
-            /* $table->foreignId('plan_id')->nullable()->constrained('plans')->onUpdate('cascade'); */
-
-            $table->unsignedBigInteger('plan_id')->nullable();
-            $table->foreign('plan_id')->references('id')->on('plans')->onUpdate('cascade');
-
+            $table->unsignedBigInteger('plans_id')->nullable();
+            $table->foreign('plans_id')->references('id')->on('plans');
             $table->timestamps();
         });
     }
@@ -35,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plan_units');
+        Schema::dropIfExists('weeks');
     }
 };
