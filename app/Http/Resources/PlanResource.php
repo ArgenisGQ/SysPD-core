@@ -31,7 +31,7 @@ class PlanResource extends JsonResource
             'planning_id'   => $this->planning_id,
 
             'planning'      => new PlanningResource($this->planning),
-            'units'         => UnitResource::collection($this->whenLoaded('units')),
+            'weeks'         => WeekResource::collection($this->whenLoaded('weeks')),
 
         ];
     }

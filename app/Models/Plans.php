@@ -32,8 +32,8 @@ class Plans extends Model
     }
 
     //Relacion de uno a muchos
-    public function units(){
-        return $this->hasMany(Units::class);
+    public function weeks(){
+        return $this->hasMany(Week::class);
     }
 
     //Relacion uno a muchos inverso
