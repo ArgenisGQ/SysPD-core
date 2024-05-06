@@ -30,7 +30,8 @@ class DatabaseSeeder extends Seeder
             User_coursesSeeder::class,
             PlanUnitSeeder::class,
             PlansSeeder::class,
-            UnitsSeeder::class,
+            /* UnitsSeeder::class, */
+            WeekSeeder::class,
 
         ]);
     }

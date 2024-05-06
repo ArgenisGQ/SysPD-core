@@ -12,6 +12,7 @@ use App\Http\Controllers\PlanningController;
 use App\Http\Controllers\PlansController;
 use App\Http\Controllers\UnitsController;
 use App\Http\Controllers\PlanUnitController;
+use App\Http\Controllers\WeekController;
 use App\Models\Courses;
 use Illuminate\Routing\Router;
 
@@ -139,7 +140,7 @@ Route::middleware(["auth:api"])->group(function(){
     Route::resource('planunits', PlanUnitController::class)
     ->only(['index','show','store','update','destroy']);
     //PLANIFICACION - UNIDADES (SEMANAS)
-    Route::resource('units', UnitsController::class)
+    Route::resource('weeks', WeekController::class)
            ->only(['index','show','store','update','destroy']);
 });
 /* Route::resource(images, [ImageController::class]); */
