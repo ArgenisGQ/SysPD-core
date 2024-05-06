@@ -61,6 +61,52 @@ class PlansSeeder extends Seeder
             'plan_unit_id'  => "1"
         ]);
 
+        DB::table('plans')->insert([
+            /* 'unit'          => "1",
+            'comp_esp'      => "Competencia Especifica",
+            'crit_desemp'   => "Criterio de Desempeño", */
+            'est_eva'       => "Estrategia de Evaluacion 2",
+            'inst_eva'      => "Instrumento de Evaluacion 2",
+            'tip_eva'       => "Tipo de Evaluacion 2",
+            'evid_eva'      => "Evidencia de Evaluacion 2",
+            'retro'         => "Retroalimentacion 2",
+            'lapso'         => "lapso/Entrega 2",
+            /* 'unit_id'       => "1", */
+            'ponderacion'   => "10",
+            'planning_id'   => "1",
+            'plan_unit_id' => "2"
+        ]);
+        DB::table('plans')->insert([
+            /* 'unit'          => "1",
+            'comp_esp'      => "Competencia Especifica",
+            'crit_desemp'   => "Criterio de Desempeño", */
+            'est_eva'       => "Estrategia de Evaluacion 3",
+            'inst_eva'      => "Instrumento de Evaluacion 3",
+            'tip_eva'       => "Tipo de Evaluacion 3",
+            'evid_eva'      => "Evidencia de Evaluacion 3",
+            'retro'         => "Retroalimentacion 3",
+            'lapso'         => "lapso/Entrega 3",
+            /* 'unit_id'       => "2", */
+            'ponderacion'   => "10",
+            'planning_id'   => "1",
+            'plan_unit_id'  => "3"
+        ]);
+        DB::table('plans')->insert([
+            /* 'unit'          => "1",
+            'comp_esp'      => "Competencia Especifica",
+            'crit_desemp'   => "Criterio de Desempeño", */
+            'est_eva'       => "Estrategia de Evaluacion 4",
+            'inst_eva'      => "Instrumento de Evaluacion 4",
+            'tip_eva'       => "Tipo de Evaluacion 4",
+            'evid_eva'      => "Evidencia de Evaluacion 4",
+            'retro'         => "Retroalimentacion 4",
+            'lapso'         => "lapso/Entrega 4",
+            /* 'unit_id'       => "3", */
+            'ponderacion'   => "10",
+            'planning_id'   => "1",
+            'plan_unit_id'  => "4"
+        ]);
+
 
     }
 }
