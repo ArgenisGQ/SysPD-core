@@ -19,6 +19,7 @@ class PlanUnitSeeder extends Seeder
             'unit'          => "1",
             'comp_esp'      => "Competencia Especifica",
             'crit_desemp'   => "Criterio de Desempeño",
+            'synoptic_id'   => "1",
             /* 'unit_id'       => "1", */
             /* 'ponderacion'   => "10", */
             /* 'plan_id'       => "1" */
@@ -28,6 +29,7 @@ class PlanUnitSeeder extends Seeder
             'unit'          => "2",
             'comp_esp'      => "Competencia Especifica 2",
             'crit_desemp'   => "Criterio de Desempeño 2",
+            'synoptic_id'   => "1",
             /* 'unit_id'       => "1", */
             /* 'ponderacion'   => "10", */
             /* 'plan_id'       => "1" */
@@ -37,6 +39,7 @@ class PlanUnitSeeder extends Seeder
             'unit'          => "3",
             'comp_esp'      => "Competencia Especifica 3",
             'crit_desemp'   => "Criterio de Desempeño 3",
+            'synoptic_id'   => "1",
             /* 'unit_id'       => "1", */
             /* 'ponderacion'   => "10", */
             /* 'plan_id'       => "1" */
@@ -46,6 +49,7 @@ class PlanUnitSeeder extends Seeder
             'unit'          => "4",
             'comp_esp'      => "Competencia Especifica 4",
             'crit_desemp'   => "Criterio de Desempeño 4",
+            'synoptic_id'   => "1",
             /* 'unit_id'       => "1", */
             /* 'ponderacion'   => "10", */
             /* 'plan_id'       => "1" */

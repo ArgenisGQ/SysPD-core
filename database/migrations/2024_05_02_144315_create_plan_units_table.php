@@ -21,6 +21,9 @@ return new class extends Migration
 
             /* $table->foreignId('plan_id')->nullable()->constrained('plans')->onUpdate('cascade'); */
 
+            $table->unsignedBigInteger('synoptic_id')->nullable();
+            $table->foreign('synoptic_id')->references('id')->on('synoptics')->onUpdate('cascade');
+
             $table->unsignedBigInteger('plan_id')->nullable();
             $table->foreign('plan_id')->references('id')->on('plans')->onUpdate('cascade');
 

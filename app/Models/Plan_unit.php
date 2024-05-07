@@ -13,7 +13,8 @@ class Plan_unit extends Model
         'unit',
         'comp_esp',
         'crit_desemp',
-        'plan_id'
+        'plan_id',
+        'synoptic_id'
     ];
 
     //Relacion uno a muchos inverso
@@ -25,4 +26,14 @@ class Plan_unit extends Model
     public function plans(){
         return $this->hasMany(Plans::class);
     }
+
+    //Relacion uno a muchos inverso
+    public function synoptic(){
+        return $this->belongsTo(Synoptic::class);
+    }
+
+    //Relacion de uno a uno
+    /* public function synoptic(){
+        return $this->hasOne(Synoptic::class);
+    } */
 }

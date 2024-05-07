@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Synoptic;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class PlanUnitResource extends JsonResource
@@ -22,6 +23,7 @@ class PlanUnitResource extends JsonResource
             'plan_id'       => $this->plan_id,
 
             /* 'planning'      => new PlanningResource($this->planning), */
+            'synoptic'      => new SynopticResource($this->synoptic),
             'plans'         => PlanResource::collection($this->whenLoaded('plans')),
         ];
     }

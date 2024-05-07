@@ -32,9 +32,11 @@ class Courses extends Model
         'unitTotal',
         'user_id',
         'planning_id',
+        'synoptic_id',
         'h_clases',
         'h_tutoria',
-        'h_total'
+        'h_total',
+
         /* 'id_dpto', */
         /* 'id_faculty', */
         //'slug',
