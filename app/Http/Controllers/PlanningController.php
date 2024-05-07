@@ -7,6 +7,7 @@ use Database\Seeders\PlanningSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\PlanningResource;
+use App\Models\Plan_unit;
 
 class PlanningController extends Controller
 {
@@ -136,6 +137,8 @@ class PlanningController extends Controller
 
         $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first();
 
+        $planning2 = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first();
+
         //form01
         if ($request->step == 1) {
             /* return response()->json([
@@ -227,6 +230,49 @@ class PlanningController extends Controller
             return response()->json([
                 /* 'user'  => $userOut, */
                 'course'=> $courseOut
+            ], 200);
+
+        };
+
+        //form04
+        if ($request->step == 4) {
+            /* return response()->json([
+                'message'=>'ready!'
+            ],200); */
+
+            //validaciones
+
+            /* $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first(); */
+
+            /* $data = $planning;
+            $data->fill($request->all());
+            $data->save(); */
+            //para guardar solamente el campo de proposito
+            /* $output = $planning ->course->synoptic->update([
+                'purpose' => $request->purpose
+            ]); */
+            /* $data->save(); */
+
+            /* return response()->json($data, 200); */
+
+            //para guardar en cursos
+
+            /* $unitOut = $planning->plans->unit->update([
+                'comp_esp'       => $request->comp_esp,
+
+            ]); */
+
+            $planning2 = PlanningResource::collection(Planning::with(['plans'])
+                            ->where('id',$id)->get())
+                            ->first();
+
+            /* $flight = Flight::where('number', 'FR 900')->first(); */
+            $unitOut2 = Plan_unit::where('id', '1')->first();
+
+
+            return response()->json([
+                /* 'user'  => $userOut, */
+                'response test'=> $unitOut2
             ], 200);
 
         };

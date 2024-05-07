@@ -29,6 +29,7 @@ class PlanResource extends JsonResource
             'ponderacion'   => $this->ponderacion,
             /* 'unit_id'       => $this->unit_id, */
             'planning_id'   => $this->planning_id,
+            'plan_unit_id'  => $this->plan_unit_id,
 
             'planning'      => new PlanningResource($this->planning),
             'weeks'         => WeekResource::collection($this->whenLoaded('weeks')),
