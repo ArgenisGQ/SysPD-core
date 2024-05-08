@@ -238,42 +238,22 @@ class PlanningController extends Controller
         //form04
         if ($request->step == 4) {
 
-            if ($request->unit == 1) {
+            $plan = $planning->plans->where('unit',$request->unit)->first();
+            $plan_unit_id  = $plan->plan_unit_id;
+            $plan_unit = Plan_unit::where('id', $plan_unit_id)->first();
+            $plan_unit_update = $plan_unit->update([
+                'comp_esp'     => $request->comp_esp,
+                'crit_desemp'  => $request->crit_desemp,
+            ]);
 
-                $plan = $planning->plans->where('unit',$request->unit)->first();
-                $plan_unit_id  = $plan->plan_unit_id;
-                $plan_unit = Plan_unit::where('id', $plan_unit_id)->first();
-                $plan_unit_update = $plan_unit->update([
-                    'comp_esp'     => $request->comp_esp,
-                    'crit_desemp'  => $request->crit_desemp,
-                ]);
-
-                return response()->json([
-                    /* 'user'  => $userOut, */
-                    'plan id' => $plan,
-                    'id plan' => $plan_unit_id ,
-                    'response test into' => $plan_unit,
-                    'plan unit update'   => $plan_unit_update
-                ], 200);
-            }
-
-            if ($request->unit == 2) {
-
-                $plan = $planning->plans->where('unit',$request->unit)->first();
-                $plan_unit_id  = $plan->plan_unit_id;
-                $plan_unit = Plan_unit::where('id', $plan_unit_id)->first();
-
-                return response()->json([
-                    /* 'user'  => $userOut, */
-                    'plan id' => $plan,
-                    'id plan' => $plan_unit_id ,
-                    'response test into'=> $plan_unit
-                ], 200);
-            }
-
-
-
-
+            return response()->json([
+                /* 'user'  => $userOut, */
+                /* 'plan id' => $plan,
+                'id plan' => $plan_unit_id ,
+                'response test into'=> $plan_unit, */
+                'plan unit update'   => $plan_unit_update
+            ], 200);
+            
         };
 
 
