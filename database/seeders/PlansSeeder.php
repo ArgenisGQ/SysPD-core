@@ -16,8 +16,8 @@ class PlansSeeder extends Seeder
     public function run()
     {
         DB::table('plans')->insert([
-            /* 'unit'          => "1",
-            'comp_esp'      => "Competencia Especifica",
+            'unit'          => "1",
+            /* 'comp_esp'      => "Competencia Especifica",
             'crit_desemp'   => "Criterio de Desempeño", */
             'est_eva'       => "Estrategia de Evaluacion",
             'inst_eva'      => "Instrumento de Evaluacion",
@@ -31,8 +31,8 @@ class PlansSeeder extends Seeder
             'plan_unit_id' => "1"
         ]);
         DB::table('plans')->insert([
-            /* 'unit'          => "1",
-            'comp_esp'      => "Competencia Especifica",
+            'unit'          => "1",
+            /* 'comp_esp'      => "Competencia Especifica",
             'crit_desemp'   => "Criterio de Desempeño", */
             'est_eva'       => "Estrategia de Evaluacion",
             'inst_eva'      => "Instrumento de Evaluacion",
@@ -46,8 +46,8 @@ class PlansSeeder extends Seeder
             'plan_unit_id'  => "1"
         ]);
         DB::table('plans')->insert([
-            /* 'unit'          => "1",
-            'comp_esp'      => "Competencia Especifica",
+            'unit'          => "1",
+            /* 'comp_esp'      => "Competencia Especifica",
             'crit_desemp'   => "Criterio de Desempeño", */
             'est_eva'       => "Estrategia de Evaluacion",
             'inst_eva'      => "Instrumento de Evaluacion",
@@ -62,8 +62,8 @@ class PlansSeeder extends Seeder
         ]);
 
         DB::table('plans')->insert([
-            /* 'unit'          => "1",
-            'comp_esp'      => "Competencia Especifica",
+            'unit'          => "2",
+            /* 'comp_esp'      => "Competencia Especifica",
             'crit_desemp'   => "Criterio de Desempeño", */
             'est_eva'       => "Estrategia de Evaluacion 2",
             'inst_eva'      => "Instrumento de Evaluacion 2",
@@ -77,8 +77,8 @@ class PlansSeeder extends Seeder
             'plan_unit_id' => "2"
         ]);
         DB::table('plans')->insert([
-            /* 'unit'          => "1",
-            'comp_esp'      => "Competencia Especifica",
+            'unit'          => "3",
+            /* 'comp_esp'      => "Competencia Especifica",
             'crit_desemp'   => "Criterio de Desempeño", */
             'est_eva'       => "Estrategia de Evaluacion 3",
             'inst_eva'      => "Instrumento de Evaluacion 3",
@@ -92,8 +92,8 @@ class PlansSeeder extends Seeder
             'plan_unit_id'  => "3"
         ]);
         DB::table('plans')->insert([
-            /* 'unit'          => "1",
-            'comp_esp'      => "Competencia Especifica",
+            'unit'          => "4",
+            /* 'comp_esp'      => "Competencia Especifica",
             'crit_desemp'   => "Criterio de Desempeño", */
             'est_eva'       => "Estrategia de Evaluacion 4",
             'inst_eva'      => "Instrumento de Evaluacion 4",

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\PlanningResource;
 use App\Models\Plan_unit;
+use App\Models\Plans;
 
 class PlanningController extends Controller
 {
@@ -236,44 +237,42 @@ class PlanningController extends Controller
 
         //form04
         if ($request->step == 4) {
-            /* return response()->json([
-                'message'=>'ready!'
-            ],200); */
 
-            //validaciones
+            if ($request->unit == 1) {
 
-            /* $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first(); */
+                $plan = $planning->plans->where('unit',$request->unit)->first();
+                $plan_unit_id  = $plan->plan_unit_id;
+                $plan_unit = Plan_unit::where('id', $plan_unit_id)->first();
+                $plan_unit_update = $plan_unit->update([
+                    'comp_esp'     => $request->comp_esp,
+                    'crit_desemp'  => $request->crit_desemp,
+                ]);
 
-            /* $data = $planning;
-            $data->fill($request->all());
-            $data->save(); */
-            //para guardar solamente el campo de proposito
-            /* $output = $planning ->course->synoptic->update([
-                'purpose' => $request->purpose
-            ]); */
-            /* $data->save(); */
+                return response()->json([
+                    /* 'user'  => $userOut, */
+                    'plan id' => $plan,
+                    'id plan' => $plan_unit_id ,
+                    'response test into' => $plan_unit,
+                    'plan unit update'   => $plan_unit_update
+                ], 200);
+            }
 
-            /* return response()->json($data, 200); */
+            if ($request->unit == 2) {
 
-            //para guardar en cursos
+                $plan = $planning->plans->where('unit',$request->unit)->first();
+                $plan_unit_id  = $plan->plan_unit_id;
+                $plan_unit = Plan_unit::where('id', $plan_unit_id)->first();
 
-            /* $unitOut = $planning->plans->unit->update([
-                'comp_esp'       => $request->comp_esp,
-
-            ]); */
-
-            $planning2 = PlanningResource::collection(Planning::with(['plans'])
-                            ->where('id',$id)->get())
-                            ->first();
-
-            /* $flight = Flight::where('number', 'FR 900')->first(); */
-            $unitOut2 = Plan_unit::where('id', '1')->first();
+                return response()->json([
+                    /* 'user'  => $userOut, */
+                    'plan id' => $plan,
+                    'id plan' => $plan_unit_id ,
+                    'response test into'=> $plan_unit
+                ], 200);
+            }
 
 
-            return response()->json([
-                /* 'user'  => $userOut, */
-                'response test'=> $unitOut2
-            ], 200);
+
 
         };
 

@@ -16,8 +16,8 @@ class PlanResource extends JsonResource
     public function toArray($request)
     {
         return[
-            /* 'unit'          => $this->unit,
-            'comp_esp'      => $this->comp_esp,
+            'unit'          => $this->unit,
+            /* 'comp_esp'      => $this->comp_esp,
             'crit_desemp'   => $this->crit_desemp, */
             'unit'          => new PlanUnitResource($this->plan_unit), //buscar la unidad de la actividad
             'est_eva'       => $this->est_eva,

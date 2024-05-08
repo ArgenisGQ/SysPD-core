@@ -11,8 +11,8 @@ class Plans extends Model
     use HasFactory;
 
     protected $fillable = [
-        /* 'unit',
-        'comp_esp',
+        'unit',
+        /* 'comp_esp',
         'crit_desemp', */
         'est_eva', //es la actividad
         'inst_eva',
