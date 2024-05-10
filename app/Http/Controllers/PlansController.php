@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Plans;
+use App\Models\Planning;
+use App\Models\Plan_unit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\PlanResource;
+use App\Http\Resources\PlanningResource;
 
 class PlansController extends Controller
 {
@@ -21,6 +25,15 @@ class PlansController extends Controller
     public function store(Request $request)
     {
         /*  $input = $request->only('name', 'email', 'password', 'c_password'); */
+
+        $idPlanning = $request->planning_id;
+        /* dd($idPlanning); */
+        $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$idPlanning)->get())->first();
+        /* dd($planning); */
+        $plan = $planning->plans->where('unit',$request->unit)->first();
+        $plan_unit_id = $plan->plan_unit_id;
+        /* dd($plan_unit_id); */
+        /* $plan_unit = Plan_unit::where('id', $plan_unit_id)->first(); */ //no se usa aqui
 
         $validator = Validator::make(/* $input */ $request->all(), [
             /* 'curricularunit'      => 'required|string|max:255|unique:plannings',
@@ -42,8 +55,8 @@ class PlansController extends Controller
         $plans = Plans::create([
 
             'unit'              => $request->unit,
-            'comp_esp'          => $request->comp_esp,
-            'crit_desemp'       => $request->crit_desemp,
+            /* 'comp_esp'          => $request->comp_esp, */
+            /* 'crit_desemp'       => $request->crit_desemp, */
             'est_eva'           => $request->est_eva,
             'inst_eva'          => $request->inst_eva,
             'tip_eva'           => $request->tip_eva,
@@ -51,8 +64,9 @@ class PlansController extends Controller
             'retro'             => $request->retro,
             'lapso'             => $request->lapso,
             'ponderacion'       => $request->ponderacion,
-            'unit_id'           => $request->unit_id,
-            'planning_id'       => $request->planning_id
+            /* 'unit_id'           => $request->unit_id, */
+            'planning_id'       => $request->planning_id,
+            'plan_unit_id'      => $plan_unit_id
         ]);
 
         if ($plans) {

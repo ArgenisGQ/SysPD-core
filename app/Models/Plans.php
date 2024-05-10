@@ -21,6 +21,7 @@ class Plans extends Model
         'retro',
         'lapso',
         'ponderacion',
+        'synoptic_id',
         'unit_id',
         'planning_id',
         'plan_units_id'
