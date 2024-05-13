@@ -26,12 +26,16 @@ class PlansController extends Controller
     {
         /*  $input = $request->only('name', 'email', 'password', 'c_password'); */
 
-        $idPlanning = $request->planning_id;
+        /* return response()->json([$request->all(), 'Datos en entrada del api'], 201); */
+
+        $idPlanning = $request->idPlanning        ;
         /* dd($idPlanning); */
         $planning = PlanningResource::collection(Planning::with(['plans'])->where('id',$idPlanning)->get())->first();
         /* dd($planning); */
         $plan = $planning->plans->where('unit',$request->unit)->first();
+        /* return response()->json([$request->unit, 'Datos en entrada del api'], 201); */
         $plan_unit_id = $plan->plan_unit_id;
+        /* return response()->json([$plan_unit_id, 'Datos en entrada del api'], 201); */
         /* dd($plan_unit_id); */
         /* $plan_unit = Plan_unit::where('id', $plan_unit_id)->first(); */ //no se usa aqui
 
@@ -65,8 +69,8 @@ class PlansController extends Controller
             'lapso'             => $request->lapso,
             'ponderacion'       => $request->ponderacion,
             /* 'unit_id'           => $request->unit_id, */
-            'planning_id'       => $request->planning_id,
-            'plan_unit_id'      => $plan_unit_id
+            'planning_id'       => $request->idPlanning,
+            'plan_unit_id'      => $plan->plan_unit_id
         ]);
 
         if ($plans) {
