@@ -13,14 +13,19 @@ use App\Http\Resources\PlanningResource;
 
 class PlansController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        /* return response()->json([$request->all(), 'Plans'], 201); */
+
         $plans = Plans::all();
+
+        $planList = $plans->where('planningId',$request->planningId)
+                          ->where('unit',$request->unit);
 
        /*  dd($plannings); */
 
         return response()
-            ->json($plans);
+            ->json($planList);
     }
     public function store(Request $request)
     {
