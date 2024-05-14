@@ -34,6 +34,7 @@ class PlansController extends Controller
         /* dd($planning); */
         $plan = $planning->plans->where('unit',$request->unit)->first();
         /* return response()->json([$request->unit, 'Datos en entrada del api'], 201); */
+        /* $plan_unit_id = strval($plan->plan_unit_id); */
         $plan_unit_id = $plan->plan_unit_id;
         /* return response()->json([$plan_unit_id, 'Datos en entrada del api'], 201); */
         /* dd($plan_unit_id); */
@@ -56,6 +57,8 @@ class PlansController extends Controller
         /* $input['password'] = bcrypt($input['password']); */
         /* $user = User::create($input); */
 
+        /* return response()->json([strval($plan_unit_id2), 'Datos en entrada del api'], 201); */
+
         $plans = Plans::create([
 
             'unit'              => $request->unit,
@@ -70,7 +73,7 @@ class PlansController extends Controller
             'ponderacion'       => $request->ponderacion,
             /* 'unit_id'           => $request->unit_id, */
             'planning_id'       => $request->idPlanning,
-            'plan_unit_id'      => $plan->plan_unit_id
+            'plan_unit_id'      => $plan_unit_id
         ]);
 
         if ($plans) {

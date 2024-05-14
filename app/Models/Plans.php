@@ -24,7 +24,7 @@ class Plans extends Model
         'synoptic_id',
         'unit_id',
         'planning_id',
-        'plan_units_id'
+        'plan_unit_id'
     ];
 
     //Relacion uno a muchos inverso
