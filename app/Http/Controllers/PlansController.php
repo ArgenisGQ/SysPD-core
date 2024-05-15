@@ -19,10 +19,20 @@ class PlansController extends Controller
 
         $plans = Plans::all();
 
-        $planList = $plans->where('planningId',$request->planningId)
-                          ->where('unit',$request->unit);
+        /* return response()->json([$plans, 'Plans'], 201); */
+        /* dd($plans); */
 
-       /*  dd($plannings); */
+        /* $planList = $plans->where('planning_id',$request->planningId)
+                          ->where('unit',$request->unit); */
+
+        /* $planList = $plans->where([['planning_id','=',$request->planningId],
+                                   ['unit','=',$request->unit]]); */
+
+        $planList = Plans::where([ 'planning_id' => $request->planningId,
+                                    'unit'       => $request->unit
+                                  ])->get();
+
+        /* dd($planList); */
 
         return response()
             ->json($planList);
