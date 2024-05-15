@@ -138,7 +138,7 @@ Route::middleware(["auth:api"])->group(function(){
            ->only(['index','show','store','update','destroy']);
     //PLANIFICACION - PLAN actividades relacion unidad
     Route::resource('planunits', PlanUnitController::class)
-    ->only(['index','show','store','update','destroy']);
+           ->only(['index','show','store','update','destroy']);
     //PLANIFICACION - UNIDADES (SEMANAS)
     Route::resource('weeks', WeekController::class)
            ->only(['index','show','store','update','destroy']);
