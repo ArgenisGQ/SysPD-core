@@ -37,6 +37,30 @@ class PlansController extends Controller
         return response()
             ->json($planList);
     }
+    public function search(Request $request)
+    {
+        /* return response()->json([$request->all(), 'Plans'], 201); */
+
+        $plans = Plans::all();
+
+        /* return response()->json([$plans, 'Plans'], 201); */
+        /* dd($plans); */
+
+        /* $planList = $plans->where('planning_id',$request->planningId)
+                          ->where('unit',$request->unit); */
+
+        /* $planList = $plans->where([['planning_id','=',$request->planningId],
+                                   ['unit','=',$request->unit]]); */
+
+        $planList = Plans::where([ 'planning_id' => $request->planningId,
+                                    'unit'       => $request->unit
+                                  ])->get();
+
+        /* dd($planList); */
+
+        return response()
+            ->json($planList);
+    }
     public function store(Request $request)
     {
         /*  $input = $request->only('name', 'email', 'password', 'c_password'); */

@@ -124,6 +124,7 @@ Route::middleware(["auth:api"])->group(function(){
     Route::get('useractive', [AuthController::class, 'userActive']);
     Route::get('respondwithtoken', [AuthController::class, 'respondWithToken']);
 
+
     //USUARIOS
     Route::apiResource('users', UsersController::class)
            ->only(['index','show','store','update','destroy']);
@@ -136,11 +137,13 @@ Route::middleware(["auth:api"])->group(function(){
     //PLANIFICACION - PLAN UNIDADES
     Route::resource('plans', PlansController::class)
            ->only(['index','show','store','update','destroy']);
+    Route::post('plansearch', [PlansController::class, 'search']);
     //PLANIFICACION - PLAN actividades relacion unidad
     Route::resource('planunits', PlanUnitController::class)
            ->only(['index','show','store','update','destroy']);
     //PLANIFICACION - UNIDADES (SEMANAS)
     Route::resource('weeks', WeekController::class)
            ->only(['index','show','store','update','destroy']);
+
 });
 /* Route::resource(images, [ImageController::class]); */
