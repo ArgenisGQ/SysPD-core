@@ -14,7 +14,8 @@ class Plans extends Model
         'unit',
         /* 'comp_esp',
         'crit_desemp', */
-        'est_eva', //es la actividad
+        'name_est_eva', //es la actividad
+        'est_eva',
         'inst_eva',
         'tip_eva',
         'evid_eva',

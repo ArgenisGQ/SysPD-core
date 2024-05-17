@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('unit')->nullable();
             $table->string('comp_esp')->nullable();
             $table->string('crit_desemp')->nullable();
+            $table->string('name_est_eva')->nullable();
             $table->string('est_eva')->nullable();
             $table->string('inst_eva')->nullable();
             $table->string('tip_eva')->nullable();
@@ -25,7 +26,7 @@ return new class extends Migration
             $table->string('retro')->nullable();
 
             $table->string('lapso')->nullable();//que grabar aqui?
-            
+
 
             $table->string('ponderacion')->nullable();
 

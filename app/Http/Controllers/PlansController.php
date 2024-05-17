@@ -103,6 +103,7 @@ class PlansController extends Controller
             'unit'              => $request->unit,
             /* 'comp_esp'          => $request->comp_esp, */
             /* 'crit_desemp'       => $request->crit_desemp, */
+            'name_est_eva'      => $request->name_est_eva,
             'est_eva'           => $request->est_eva,
             'inst_eva'          => $request->inst_eva,
             'tip_eva'           => $request->tip_eva,

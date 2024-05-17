@@ -19,7 +19,8 @@ class PlanResource extends JsonResource
             'unit'          => $this->unit,
             /* 'comp_esp'      => $this->comp_esp,
             'crit_desemp'   => $this->crit_desemp, */
-            'unitf'          => new PlanUnitResource($this->plan_unit), //buscar la unidad de la actividad
+            'unitf'         => new PlanUnitResource($this->plan_unit), //buscar la unidad de la actividad
+            'name_est_eva'  => $this->name_est_eva,
             'est_eva'       => $this->est_eva,
             'inst_eva'      => $this->inst_eva,
             'tip_eva'       => $this->tip_eva,
