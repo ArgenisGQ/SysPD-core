@@ -19,7 +19,7 @@ class PlansSeeder extends Seeder
             'unit'          => "1",
             /* 'comp_esp'      => "Competencia Especifica",
             'crit_desemp'   => "Criterio de Desempeño", */
-            'name_est_eva'  => "NOMBRE Estrategia de Eva",
+            'name_est_eva'  => "NOMBRE Estrategia de Eva 1-1",
             'est_eva'       => "Estrategia de Evaluacion",
             'inst_eva'      => "Instrumento de Evaluacion",
             'tip_eva'       => "Tipo de Evaluacion",
@@ -35,7 +35,7 @@ class PlansSeeder extends Seeder
             'unit'          => "1",
             /* 'comp_esp'      => "Competencia Especifica",
             'crit_desemp'   => "Criterio de Desempeño", */
-            'name_est_eva'  => "NOMBRE Estrategia de Eva",
+            'name_est_eva'  => "NOMBRE Estrategia de Eva 1-2",
             'est_eva'       => "Estrategia de Evaluacion",
             'inst_eva'      => "Instrumento de Evaluacion",
             'tip_eva'       => "Tipo de Evaluacion",
@@ -51,7 +51,7 @@ class PlansSeeder extends Seeder
             'unit'          => "1",
             /* 'comp_esp'      => "Competencia Especifica",
             'crit_desemp'   => "Criterio de Desempeño", */
-            'name_est_eva'  => "NOMBRE Estrategia de Eva",
+            'name_est_eva'  => "NOMBRE Estrategia de Eva 1-3",
             'est_eva'       => "Estrategia de Evaluacion",
             'inst_eva'      => "Instrumento de Evaluacion",
             'tip_eva'       => "Tipo de Evaluacion",
