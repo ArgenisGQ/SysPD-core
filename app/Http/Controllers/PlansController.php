@@ -52,9 +52,21 @@ class PlansController extends Controller
         /* $planList = $plans->where([['planning_id','=',$request->planningId],
                                    ['unit','=',$request->unit]]); */
 
-        $planList = Plans::where([ 'planning_id' => $request->planningId,
-                                    'unit'       => $request->unit
+        $planFindUnit = $request->unit;
+
+        /* return response()->json([$planFindUnit, 'Plans '], 201); */
+
+        if ($planFindUnit != 0) {
+            $planList = Plans::where([ 'planning_id' => $request->planningId,
+                                       'unit'        => $request->unit
                                   ])->get();
+        } else {
+            $planList = Plans::where([ 'planning_id' => $request->planningId,
+                                       /* 'unit'        => $request->unit */
+                                  ])->get();
+        }
+
+
 
         /* dd($planList); */
 
