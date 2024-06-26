@@ -27,6 +27,11 @@ class Week extends Model
         return $this->belongsTo(Plans::class);
     } */
 
+    //Relacion de uno a muchos
+    public function plans(){
+        return $this->hasMany(Plans::class);
+    }
+
     //Relacion uno a muchos inverso
     public function planning(){
         return $this->belongsTo(Planning::class);

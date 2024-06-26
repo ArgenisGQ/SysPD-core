@@ -24,6 +24,7 @@ class Plans extends Model
         'ponderacion',
         'synoptic_id',
         'unit_id',
+        'weeks_id',
         'planning_id',
         'plan_unit_id'
     ];
@@ -37,6 +38,11 @@ class Plans extends Model
     /* public function weeks(){
         return $this->hasMany(Week::class);
     } */
+
+    //Relacion uno a muchos inverso
+    public function week(){
+        return $this->belongsTo(Week::class);
+    }
 
     //Relacion uno a muchos inverso
     public function plan_unit(){
