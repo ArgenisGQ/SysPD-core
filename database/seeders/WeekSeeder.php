@@ -16,6 +16,7 @@ class WeekSeeder extends Seeder
     public function run()
     {
         DB::table('weeks')->insert([
+            'semana'            => "1",
             'contenido'         => "01 Estructura de las unidades de aprendizaje - Contenido",
             'comp_esp'          => "Competencia Especifica",
             'crit_desemp'       => "Criterios de Desempeño",
@@ -26,6 +27,7 @@ class WeekSeeder extends Seeder
             'plans_id'           => "1"
         ]);
         DB::table('weeks')->insert([
+            'semana'            => "2",
             'contenido'         => "02 Estructura de las unidades de aprendizaje - Contenido",
             'comp_esp'          => "Competencia Especifica",
             'crit_desemp'       => "Criterios de Desempeño",
@@ -36,7 +38,107 @@ class WeekSeeder extends Seeder
             'plans_id'           => "1"
         ]);
         DB::table('weeks')->insert([
+            'semana'            => "3",
             'contenido'         => "03 Estructura de las unidades de aprendizaje - Contenido",
+            'comp_esp'          => "Competencia Especifica",
+            'crit_desemp'       => "Criterios de Desempeño",
+            'est_didac'         => "Estrategias Didacicas",
+            'eval'              => "Evaluacion/Realimentacion",
+            'rec_apren'         => "Recursos de Aprendizaje",
+            'biblio'            => "Bibliografia",
+            'plans_id'           => "1"
+        ]);
+        DB::table('weeks')->insert([
+            'semana'            => "4",
+            'contenido'         => "04 Estructura de las unidades de aprendizaje - Contenido",
+            'comp_esp'          => "Competencia Especifica",
+            'crit_desemp'       => "Criterios de Desempeño",
+            'est_didac'         => "Estrategias Didacicas",
+            'eval'              => "Evaluacion/Realimentacion",
+            'rec_apren'         => "Recursos de Aprendizaje",
+            'biblio'            => "Bibliografia",
+            'plans_id'           => "1"
+        ]);
+        DB::table('weeks')->insert([
+            'semana'            => "5",
+            'contenido'         => "05 Estructura de las unidades de aprendizaje - Contenido",
+            'comp_esp'          => "Competencia Especifica",
+            'crit_desemp'       => "Criterios de Desempeño",
+            'est_didac'         => "Estrategias Didacicas",
+            'eval'              => "Evaluacion/Realimentacion",
+            'rec_apren'         => "Recursos de Aprendizaje",
+            'biblio'            => "Bibliografia",
+            'plans_id'           => "1"
+        ]);
+        DB::table('weeks')->insert([
+            'semana'            => "6",
+            'contenido'         => "06 Estructura de las unidades de aprendizaje - Contenido",
+            'comp_esp'          => "Competencia Especifica",
+            'crit_desemp'       => "Criterios de Desempeño",
+            'est_didac'         => "Estrategias Didacicas",
+            'eval'              => "Evaluacion/Realimentacion",
+            'rec_apren'         => "Recursos de Aprendizaje",
+            'biblio'            => "Bibliografia",
+            'plans_id'           => "1"
+        ]);
+        DB::table('weeks')->insert([
+            'semana'            => "7",
+            'contenido'         => "07 Estructura de las unidades de aprendizaje - Contenido",
+            'comp_esp'          => "Competencia Especifica",
+            'crit_desemp'       => "Criterios de Desempeño",
+            'est_didac'         => "Estrategias Didacicas",
+            'eval'              => "Evaluacion/Realimentacion",
+            'rec_apren'         => "Recursos de Aprendizaje",
+            'biblio'            => "Bibliografia",
+            'plans_id'           => "1"
+        ]);
+        DB::table('weeks')->insert([
+            'semana'            => "8",
+            'contenido'         => "08 Estructura de las unidades de aprendizaje - Contenido",
+            'comp_esp'          => "Competencia Especifica",
+            'crit_desemp'       => "Criterios de Desempeño",
+            'est_didac'         => "Estrategias Didacicas",
+            'eval'              => "Evaluacion/Realimentacion",
+            'rec_apren'         => "Recursos de Aprendizaje",
+            'biblio'            => "Bibliografia",
+            'plans_id'           => "1"
+        ]);
+        DB::table('weeks')->insert([
+            'semana'            => "9",
+            'contenido'         => "09 Estructura de las unidades de aprendizaje - Contenido",
+            'comp_esp'          => "Competencia Especifica",
+            'crit_desemp'       => "Criterios de Desempeño",
+            'est_didac'         => "Estrategias Didacicas",
+            'eval'              => "Evaluacion/Realimentacion",
+            'rec_apren'         => "Recursos de Aprendizaje",
+            'biblio'            => "Bibliografia",
+            'plans_id'           => "1"
+        ]);
+        DB::table('weeks')->insert([
+            'semana'            => "10",
+            'contenido'         => "10 Estructura de las unidades de aprendizaje - Contenido",
+            'comp_esp'          => "Competencia Especifica",
+            'crit_desemp'       => "Criterios de Desempeño",
+            'est_didac'         => "Estrategias Didacicas",
+            'eval'              => "Evaluacion/Realimentacion",
+            'rec_apren'         => "Recursos de Aprendizaje",
+            'biblio'            => "Bibliografia",
+            'plans_id'           => "1"
+        ]);
+        DB::table('weeks')->insert([
+            'semana'            => "11",
+            'contenido'         => "11 Estructura de las unidades de aprendizaje - Contenido",
+            'comp_esp'          => "Competencia Especifica",
+            'crit_desemp'       => "Criterios de Desempeño",
+            'est_didac'         => "Estrategias Didacicas",
+            'eval'              => "Evaluacion/Realimentacion",
+            'rec_apren'         => "Recursos de Aprendizaje",
+            'biblio'            => "Bibliografia",
+            'plans_id'           => "1"
+        ]);
+        DB::table('weeks')->insert([
+            'semana'            => "12",
+            'contenido'         => "12 Estructura de las unidades de aprendizaje - Contenido",
             'comp_esp'          => "Competencia Especifica",
             'crit_desemp'       => "Criterios de Desempeño",
             'est_didac'         => "Estrategias Didacicas",

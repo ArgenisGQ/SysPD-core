@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('weeks', function (Blueprint $table) {
             $table->id();
+            $table->string('semana')->nullable();
             $table->string('contenido')->nullable();
             $table->string('comp_esp')->nullable();
             $table->string('crit_desemp')->nullable();
