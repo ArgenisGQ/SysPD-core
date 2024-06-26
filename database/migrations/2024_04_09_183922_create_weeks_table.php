@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('weeks', function (Blueprint $table) {
             $table->id();
+            $table->string('unit')->nullable();
             $table->string('semana')->nullable();
             $table->string('contenido')->nullable();
             $table->string('comp_esp')->nullable();
@@ -29,6 +30,10 @@ return new class extends Migration
 
             $table->unsignedBigInteger('plans_id')->nullable();
             $table->foreign('plans_id')->references('id')->on('plans');
+
+            $table->unsignedBigInteger('planning_id')->nullable();
+            $table->foreign('planning_id')->references('id')->on('plannings');
+
 
             $table->timestamps();
         });

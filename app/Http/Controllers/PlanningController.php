@@ -80,7 +80,7 @@ class PlanningController extends Controller
             ],404);
         }
         /* $courses = CourseResource::collection(Courses::with('user')->where('id',$id)->get()); */
-        $plannings = PlanningResource::collection(Planning::with(['plans'])->where('id',$id)->get())->first();
+        $plannings = PlanningResource::collection(Planning::with(['plans','weeks'])->where('id',$id)->get())->first();
 
         //retornar el JSON
         return response()->json([
@@ -253,7 +253,7 @@ class PlanningController extends Controller
                 'response test into'=> $plan_unit, */
                 'plan unit update'   => $plan_unit_update
             ], 200);
-            
+
         };
 
 

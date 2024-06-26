@@ -152,11 +152,11 @@ class PlansController extends Controller
         }
         /* $courses = CourseResource::collection(Courses::with('user')->where('id',$id)->get()); */
 
-        $planz = PlanResource::collection(Plans::with(['weeks'])->where('id',$id)->get());
+        /* $planz = PlanResource::collection(Plans::with(['weeks'])->where('id',$id)->get()); */
+        $planz = PlanResource::collection(Plans::where('id',$id)->get());
+
         /* $planz = $id; */
-
         /* $planzz = $plans->units();
-
         dd($planzz); */
 
         /* $planz = $plans->units(); */

@@ -10,6 +10,8 @@ class Week extends Model
     use HasFactory;
 
     protected $fillable = [
+        'unit',
+        'semana',
         'contenido',
         'comp_esp',
         'crit_desemp',
@@ -21,7 +23,12 @@ class Week extends Model
     ];
 
     //Relacion uno a muchos inverso
-    public function plan(){
+    /* public function plan(){
         return $this->belongsTo(Plans::class);
+    } */
+
+    //Relacion uno a muchos inverso
+    public function planning(){
+        return $this->belongsTo(Planning::class);
     }
 }

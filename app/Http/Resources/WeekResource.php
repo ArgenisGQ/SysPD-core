@@ -17,6 +17,8 @@ class WeekResource extends JsonResource
         /* return parent::toArray($request); */
 
         return [
+            'unit'              => $this->unit,
+            'semana'            => $this->semana,
             'contenido'         => $this->contenido,
             'comp_esp'          => $this->comp_esp,
             'crit_desemp'       => $this->crit_desemp,
@@ -26,6 +28,7 @@ class WeekResource extends JsonResource
             'biblio'            => $this->biblio,
             'plans_id'          => $this->plans_id,
             'plan'              => new PlanResource($this->plan),
+            'planning'          => new PlanningResource($this->planning),
         ];
     }
 }

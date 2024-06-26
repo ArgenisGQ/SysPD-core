@@ -26,6 +26,7 @@ class PlanningResource extends JsonResource
             'user_id'           => $this->user_id,
             'course_id'         => $this->course_id,
             'plans'             => PlanResource::collection($this->whenLoaded('plans')),
+            'weeks'             => WeekResource::collection($this->whenLoaded('weeks')),
             'user'              => new UserResource($this->user),
             'course'            => new CourseResource($this->course),
             /* 'plans'             => PlanResource::collection($this->whenLoaded('plans')) */
