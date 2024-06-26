@@ -76,7 +76,8 @@ class WeekController extends Controller
 
 
 
-        $weekz = WeekResource::collection(Week::with(['plan'])->where('id',$id)->get());
+        /* $weekz = WeekResource::collection(Week::with(['plan'])->where('id',$id)->get()); */
+        $weekz = WeekResource::collection(Week::where('id',$id)->get());
 
         //retornar el JSON
         return response()->json([
@@ -144,7 +145,7 @@ class WeekController extends Controller
             'message' => 'Week successfully update!.'
         ],200);
     }
- 
+
 
     public function destroy($id)
     {

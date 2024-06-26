@@ -27,7 +27,6 @@ return new class extends Migration
 
             $table->string('lapso')->nullable();//que grabar aqui?
 
-
             $table->string('ponderacion')->nullable();
 
             $table->unsignedBigInteger('planning_id')->nullable();
