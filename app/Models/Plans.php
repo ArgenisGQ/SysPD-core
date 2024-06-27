@@ -21,6 +21,7 @@ class Plans extends Model
         'evid_eva',
         'retro',
         'lapso',
+        'semana',
         'ponderacion',
         'synoptic_id',
         'unit_id',

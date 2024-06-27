@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('retro')->nullable();
 
             $table->string('lapso')->nullable();//que grabar aqui?
+            $table->string('semana')->nullable();//semana de 1 a 12
 
             $table->string('ponderacion')->nullable();
 

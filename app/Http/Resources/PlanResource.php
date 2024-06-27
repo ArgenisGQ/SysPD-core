@@ -28,10 +28,12 @@ class PlanResource extends JsonResource
             'evid_eva'      => $this->evid_eva,
             'retro'         => $this->retro,
             'lapso'         => $this->lapso,
+            'semana'        => $this->semana,
             'ponderacion'   => $this->ponderacion,
             /* 'unit_id'       => $this->unit_id, */
             'planning_id'   => $this->planning_id,
             'plan_unit_id'  => $this->plan_unit_id,
+            'weeks_id'      => $this->weeks_id,
             'week'          => new WeekResource($this->week),
             'planning'      => new PlanningResource($this->planning),
             /* 'weeks'         => WeekResource::collection($this->whenLoaded('weeks')), */

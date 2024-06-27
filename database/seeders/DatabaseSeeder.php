@@ -29,9 +29,10 @@ class DatabaseSeeder extends Seeder
             PlanningSeeder::class,
             User_coursesSeeder::class,
             PlanUnitSeeder::class,
-            PlansSeeder::class,
+            /* PlansSeeder::class, */
             /* UnitsSeeder::class, */
             WeekSeeder::class,
+            PlansSeeder::class,
 
         ]);
     }

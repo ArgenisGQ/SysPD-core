@@ -26,7 +26,7 @@ class WeekResource extends JsonResource
             'eval'              => $this->eval,
             'rec_apren'         => $this->rec_apren,
             'biblio'            => $this->biblio,
-            'plans_id'          => $this->plans_id,
+            /* 'plans_id'          => $this->plans_id, */
             /* 'plan'              => new PlanResource($this->plan), */
             'plans'             => PlanResource::collection($this->whenLoaded('plans')),
             'planning'          => new PlanningResource($this->planning),

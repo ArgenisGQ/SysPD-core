@@ -77,7 +77,8 @@ class WeekController extends Controller
 
 
         /* $weekz = WeekResource::collection(Week::with(['plan'])->where('id',$id)->get()); */
-        $weekz = WeekResource::collection(Week::where('id',$id)->get());
+        /* $weekz = WeekResource::collection(Week::where('id',$id)->get()); */
+        $weekz = WeekResource::collection(Week::with(['plans'])->where('id',$id)->get());
 
         //retornar el JSON
         return response()->json([

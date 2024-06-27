@@ -26,7 +26,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
         DB::table('weeks')->insert([
             'unit'              => "1",
@@ -39,7 +39,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
         DB::table('weeks')->insert([
             'unit'              => "1",
@@ -52,7 +52,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
         DB::table('weeks')->insert([
             'unit'              => "2",
@@ -65,7 +65,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
         DB::table('weeks')->insert([
             'unit'              => "2",
@@ -78,7 +78,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
         DB::table('weeks')->insert([
             'unit'              => "2",
@@ -91,7 +91,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
         DB::table('weeks')->insert([
             'unit'              => "3",
@@ -104,7 +104,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
         DB::table('weeks')->insert([
             'unit'              => "3",
@@ -117,7 +117,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
         DB::table('weeks')->insert([
             'unit'              => "3",
@@ -130,7 +130,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
         DB::table('weeks')->insert([
             'unit'              => "4",
@@ -143,7 +143,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
         DB::table('weeks')->insert([
             'unit'              => "4",
@@ -156,7 +156,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
         DB::table('weeks')->insert([
             'unit'              => "4",
@@ -169,7 +169,7 @@ class WeekSeeder extends Seeder
             'rec_apren'         => "Recursos de Aprendizaje",
             'biblio'            => "Bibliografia",
             'planning_id'       => "1",
-            'plans_id'          => "1"
+            /* 'plans_id'          => "1" */
         ]);
     }
 }

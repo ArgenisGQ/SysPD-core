@@ -26,10 +26,12 @@ class PlansSeeder extends Seeder
             'evid_eva'      => "Evidencia de Evaluacion",
             'retro'         => "Retroalimentacion",
             'lapso'         => "lapso/Entrega",
+            'semana'        => "1",
+            'weeks_id'      => "1",
             /* 'unit_id'       => "1", */
             'ponderacion'   => "10",
             'planning_id'   => "1",
-            'plan_unit_id' => "1"
+            'plan_unit_id'  => "1"
         ]);
         DB::table('plans')->insert([
             'unit'          => "1",
@@ -42,6 +44,8 @@ class PlansSeeder extends Seeder
             'evid_eva'      => "Evidencia de Evaluacion",
             'retro'         => "Retroalimentacion",
             'lapso'         => "lapso/Entrega",
+            'semana'        => "1",
+            'weeks_id'      => "1",
             /* 'unit_id'       => "2", */
             'ponderacion'   => "10",
             'planning_id'   => "1",
@@ -58,6 +62,8 @@ class PlansSeeder extends Seeder
             'evid_eva'      => "Evidencia de Evaluacion",
             'retro'         => "Retroalimentacion",
             'lapso'         => "lapso/Entrega",
+            'semana'        => "2",
+            'weeks_id'      => "2",
             /* 'unit_id'       => "3", */
             'ponderacion'   => "10",
             'planning_id'   => "1",
@@ -75,6 +81,8 @@ class PlansSeeder extends Seeder
             'evid_eva'      => "Evidencia de Evaluacion 2",
             'retro'         => "Retroalimentacion 2",
             'lapso'         => "lapso/Entrega 2",
+            'semana'        => "3",
+            'weeks_id'      => "3",
             /* 'unit_id'       => "1", */
             'ponderacion'   => "10",
             'planning_id'   => "1",
@@ -91,6 +99,8 @@ class PlansSeeder extends Seeder
             'evid_eva'      => "Evidencia de Evaluacion 3",
             'retro'         => "Retroalimentacion 3",
             'lapso'         => "lapso/Entrega 3",
+            'semana'        => "4",
+            'weeks_id'      => "4",
             /* 'unit_id'       => "2", */
             'ponderacion'   => "10",
             'planning_id'   => "1",
@@ -107,6 +117,8 @@ class PlansSeeder extends Seeder
             'evid_eva'      => "Evidencia de Evaluacion 4",
             'retro'         => "Retroalimentacion 4",
             'lapso'         => "lapso/Entrega 4",
+            'semana'        => "4",
+            'weeks_id'      => "4",
             /* 'unit_id'       => "3", */
             'ponderacion'   => "10",
             'planning_id'   => "1",
