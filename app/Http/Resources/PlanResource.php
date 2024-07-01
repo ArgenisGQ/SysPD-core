@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use App\Models\Planning;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\WeekResource;
 
 class PlanResource extends JsonResource
 {

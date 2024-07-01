@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::table('plans', function (Blueprint $table) {
             $table->unsignedBigInteger('weeks_id')->nullable();
-            /* $table->foreign('weeks_id')->references('id')->on('weeks')->onUpdate('cascade'); */
-            $table->foreign('weeks_id')->references('id')->on('weeks');
+            $table->foreign('weeks_id')->references('id')->on('weeks')->onUpdate('cascade');
+            /* $table->foreign('weeks_id')->references('id')->on('weeks'); */
         });
     }
 

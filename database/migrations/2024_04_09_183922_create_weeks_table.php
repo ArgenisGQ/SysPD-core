@@ -28,8 +28,11 @@ return new class extends Migration
             $table->unsignedBigInteger('synoptic_id')->nullable();
             $table->foreign('synoptic_id')->references('id')->on('synoptics');
 
-            $table->unsignedBigInteger('plans_id')->nullable();
-            $table->foreign('plans_id')->references('id')->on('plans');
+           /*  $table->unsignedBigInteger('plans_id')->nullable();
+            $table->foreign('plans_id')->references('id')->on('plans'); */
+
+            /* $table->unsignedBigInteger('plans_id')->nullable();
+            $table->foreign('plans_id')->references('id')->on('plans')->onUpdate('cascade'); */
 
             $table->unsignedBigInteger('planning_id')->nullable();
             $table->foreign('planning_id')->references('id')->on('plannings');

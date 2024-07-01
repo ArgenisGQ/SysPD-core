@@ -19,7 +19,7 @@ class Week extends Model
         'eval',
         'rec_apren',
         'biblio',
-        'plans_id',
+        /* 'plans_id', */
         'planning_id'
     ];
 

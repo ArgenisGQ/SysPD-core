@@ -154,6 +154,7 @@ class PlansController extends Controller
 
         /* $planz = PlanResource::collection(Plans::with(['weeks'])->where('id',$id)->get()); */
         $planz = PlanResource::collection(Plans::where('id',$id)->get());
+        /* $planz = PlanResource::collection(Plans::with(['week'])->where('id',$id)->get()); */
 
         /* $planz = $id; */
         /* $planzz = $plans->units();

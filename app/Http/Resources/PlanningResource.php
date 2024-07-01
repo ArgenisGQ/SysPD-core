@@ -3,7 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\PlanResource;
+/* use App\Http\Resources\PlanResource; */
 
 class PlanningResource extends JsonResource
 {

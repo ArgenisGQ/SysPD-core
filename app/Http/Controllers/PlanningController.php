@@ -80,8 +80,8 @@ class PlanningController extends Controller
             ],404);
         }
         /* $courses = CourseResource::collection(Courses::with('user')->where('id',$id)->get()); */
-        $plannings = PlanningResource::collection(Planning::with(['plans','weeks'])->where('id',$id)->get())->first();
-
+        /* $plannings = PlanningResource::collection(Planning::with(['plans','weeks'])->where('id',$id)->get())->first(); */
+        $plannings = PlanningResource::collection(Planning::with(['plans','weeks'])->where('id',$id)->get());
         //retornar el JSON
         return response()->json([
             'planning basic' => $planning,
